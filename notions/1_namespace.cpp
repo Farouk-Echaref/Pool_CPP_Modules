@@ -52,6 +52,12 @@ namespace muf = Bar;
 // }
 //output : 42
 
+namespace testing
+{
+	int pi = 314;
+	int	f(int pi) {return pi/2;}
+};
+
 //using namespaces
 int main(void)
 {
@@ -71,5 +77,6 @@ int main(void)
 	printf("::gl_var =   %d\n",::gl_var);
 	printf("::f()    =   %d\n\n", ::f());
 
+	printf("testing::pi = %d\ntesting::f(testing::pi) = %d\n",testing::pi, testing::f(testing::pi));
 	return (0);
 }
