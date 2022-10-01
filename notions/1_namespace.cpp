@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 02:09:57 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/07/04 03:10:04 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/09/30 21:35:36 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,14 @@ namespace Bar {
 //aliasing
 namespace muf = Bar; 
 
+namespace testing
+{
+	int pi = 314;
+	int	f(int pi) {return pi/2;}
+};
+
+
+
 // :: is Scope resolution operator
 
 //namespace aliasing (nested)
@@ -45,38 +53,48 @@ namespace muf = Bar;
 // }
  
 // namespace fbz = foo::bar::baz;
- 
-// int main()
+ // int main()
 // {
 //     std::cout << fbz::qux << '\n';
 // }
 //output : 42
 
-namespace testing
-{
-	int pi = 314;
-	int	f(int pi) {return pi/2;}
-};
+
+namespace first {
+	namespace second {
+		namespace third {
+			namespace forth {
+				namespace fifth {
+					int tt = 15;
+				}
+			}
+		}
+	}
+}
+
+ namespace chain = first::second::third::forth::fifth;
 
 //using namespaces
 int main(void)
 {
-	printf("gl_var =   %d\n",gl_var);
-	printf("f()    =   %d\n\n", f());
 
-	printf("Foo::gl_var =   %d\n",Foo::gl_var);
-	printf("Foo::f()    =   %d\n\n", Foo::f());
+	printf("chain::tt = %d", chain::tt);
+	// printf("gl_var =   %d\n",gl_var);
+	// printf("f()    =   %d\n\n", f());
 
-	printf("Bar::gl_var =   %d\n",Bar::gl_var);
-	printf("Bar::f()    =   %d\n\n", Bar::f());
+	// printf("Foo::gl_var =   %d\n",Foo::gl_var);
+	// printf("Foo::f()    =   %d\n\n", Foo::f());
 
-	printf("muf::gl_var =   %d\n",muf::gl_var);
-	printf("muf::f()    =   %d\n\n", muf::f());
+	// printf("Bar::gl_var =   %d\n",Bar::gl_var);
+	// printf("Bar::f()    =   %d\n\n", Bar::f());
 
-	//different format for the gl_var (scope global)
-	printf("::gl_var =   %d\n",::gl_var);
-	printf("::f()    =   %d\n\n", ::f());
+	// printf("muf::gl_var =   %d\n",muf::gl_var);
+	// printf("muf::f()    =   %d\n\n", muf::f());
 
-	printf("testing::pi = %d\ntesting::f(testing::pi) = %d\n",testing::pi, testing::f(testing::pi));
+	// //different format for the gl_var (scope global)
+	// printf("::gl_var =   %d\n",::gl_var);
+	// printf("::f()    =   %d\n\n", ::f());
+
+	// printf("testing::pi = %d\ntesting::f(testing::pi) = %d\n",testing::pi, testing::f(testing::pi));
 	return (0);
 }
