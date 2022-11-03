@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 02:09:57 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/09/30 21:35:36 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/10/31 00:16:01 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,23 +78,23 @@ namespace first {
 int main(void)
 {
 
-	printf("chain::tt = %d", chain::tt);
-	// printf("gl_var =   %d\n",gl_var);
-	// printf("f()    =   %d\n\n", f());
+	//printf("chain::tt = %d", chain::tt);
+	printf("gl_var =   %d\n",gl_var);
+	printf("f()    =   %d\n\n", f());
 
-	// printf("Foo::gl_var =   %d\n",Foo::gl_var);
-	// printf("Foo::f()    =   %d\n\n", Foo::f());
+	printf("Foo::gl_var =   %d\n",Foo::gl_var);
+	printf("Foo::f()    =   %d\n\n", Foo::f());
 
-	// printf("Bar::gl_var =   %d\n",Bar::gl_var);
-	// printf("Bar::f()    =   %d\n\n", Bar::f());
+	printf("Bar::gl_var =   %d\n",Bar::gl_var);
+	printf("Bar::f()    =   %d\n\n", Bar::f());
 
-	// printf("muf::gl_var =   %d\n",muf::gl_var);
-	// printf("muf::f()    =   %d\n\n", muf::f());
+	printf("muf::gl_var =   %d\n",muf::gl_var);
+	printf("muf::f()    =   %d\n\n", muf::f());
 
-	// //different format for the gl_var (scope global)
-	// printf("::gl_var =   %d\n",::gl_var);
-	// printf("::f()    =   %d\n\n", ::f());
+	//different format for the gl_var (scope global)
+	printf("::gl_var =   %d\n",::gl_var);
+	printf("::f()    =   %d\n\n", ::f());
 
-	// printf("testing::pi = %d\ntesting::f(testing::pi) = %d\n",testing::pi, testing::f(testing::pi));
+	printf("testing::pi = %d\ntesting::f(testing::pi) = %d\n",testing::pi, testing::f(testing::pi));
 	return (0);
 }
