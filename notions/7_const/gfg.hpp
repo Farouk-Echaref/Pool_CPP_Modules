@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.hpp                                          :+:      :+:    :+:   */
+/*   gfg.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 17:08:24 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/03 19:23:38 by fech-cha         ###   ########.fr       */
+/*   Created: 2022/11/04 20:38:27 by fech-cha          #+#    #+#             */
+/*   Updated: 2022/11/04 20:57:33 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASS_HPP
-# define CLASS_HPP
+#ifndef GFG_HPP
+# define GFG_HPP
 
 #include <iostream>
 
-class Sample
+//non const member function
+class NonConst
 {
-    public:
-        //attributes
-        char a1;
-        int a2;
-        float a3;
-        
-        //Sample();
-        Sample(char p1, int p2, float p3);
-        ~Sample();
+    public :
+        NonConst();
+        ~NonConst(); 
+        int x;
+        void    set_data(int a);
+        int     get_data(void);
 };
 
-#endif
+
+// const member function
+// class ConstClass
+// {
+//     ConstClass();
+//     ~ConstClass();
+//     public:
+//         int x;
+//         void    set_data2(int a);
+//         int     get_data2(void) const;
+// };
+
+# endif
