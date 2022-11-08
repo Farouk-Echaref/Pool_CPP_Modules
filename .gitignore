@@ -1,4 +1,6 @@
+.gitignore
 a.out
 .DS_STORE
 .vscode
 *.gch
+megaphone
