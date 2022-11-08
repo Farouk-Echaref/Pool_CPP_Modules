@@ -18,8 +18,9 @@ int main(int argc, char **argv)
     {
         for (int i = 1; i < argc; i++)
         {
-            for (size_t j = 0; j < strlen(argv[i]); j++)
-                std::cout << (char)toupper(argv[i][j]);
+            std::string str = argv[i];
+            for (size_t j = 0; j < strlen(str); j++)
+                std::cout << (char)toupper(str[j]);
         }
         std::cout << std::endl;
     }
