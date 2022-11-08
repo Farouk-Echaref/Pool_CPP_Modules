@@ -6,11 +6,12 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:29:36 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/10/31 17:06:49 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/09 00:45:15 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
 int main(int argc, char **argv)
 {
@@ -19,7 +20,8 @@ int main(int argc, char **argv)
         for (int i = 1; i < argc; i++)
         {
             std::string str = argv[i];
-            for (size_t j = 0; j < strlen(str); j++)
+            int len = str.length();
+            for (int j = 0; j < len ; j++)
                 std::cout << (char)toupper(str[j]);
         }
         std::cout << std::endl;
