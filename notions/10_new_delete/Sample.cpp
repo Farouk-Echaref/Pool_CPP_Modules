@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 04:57:42 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/09 05:17:28 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/10 06:08:33 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ class Student
     public:
         Student(std::string login): _login(login)
         {
-            std::cout << "this->_login " << this->_login << "is born." << std::endl;
+            std::cout << "this->_login " << this->_login << " is born." << std::endl;
             return ;
         }
         ~Student(void)
         {
-            std::cout << "this->_login " << this->_login << "is dead." << std::endl;
+            std::cout << "this->_login " << this->_login << " is dead." << std::endl;
             return ;
         }
 };
