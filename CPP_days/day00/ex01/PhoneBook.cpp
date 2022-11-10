@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 20:41:12 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/10 05:12:48 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/10 05:21:28 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,6 @@ void    PhoneBook::Search(void) const
     {
         int choice;
 
-        std::cout << this->_CountContact << std::endl;
         std::cout << "Enter Index: " << std::endl;
         std::cin >> choice;
         if (choice >= 0 && choice < this->_CountContact)
