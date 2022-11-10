@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 20:20:28 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/09 21:01:40 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:50:13 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,8 @@ std::string     Contact::getNickName(void) const
 {
     return (this->_NickName);
 }
+
+// void    show(void) const
+// {
+    
+// }

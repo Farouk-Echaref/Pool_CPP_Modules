@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 19:08:00 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/10 01:25:06 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:55:38 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define CONTACT_HPP
 
 #include <iostream>
+#include <iomanip> 
 #include <string>
+#include <stdlib.h>
 
 class Contact
 { 
@@ -39,6 +41,9 @@ class Contact
         std::string    getFirstName(void) const;
         std::string    getLastName(void) const;
         std::string    getNickName(void) const;
+
+        // void    show(void) const;
+        
 };
 
 #endif 

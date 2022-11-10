@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 19:17:59 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/10 04:35:03 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/10 15:38:41 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int main(void)
     while (1)
     {    
         std::cout << "Enter Command : " << std::endl;
-        std::getline(std::cin, cmd);
+        if (!std::getline(std::cin, cmd))
+            exit(1);
         if (cmd.compare("ADD") == 0)
             phone.Add();
         else if (cmd.compare("SEARCH") == 0)

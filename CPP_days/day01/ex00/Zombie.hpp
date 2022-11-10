@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 06:22:35 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/10 06:30:12 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/10 20:38:34 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,8 @@ class Zombie
         }
         void    announce(void);  
 };
+
+Zombie  *newZombie(std::string name);
+void    randomChump(std::string name);
 
 #endif

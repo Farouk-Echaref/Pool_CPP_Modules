@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 06:31:28 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/10 06:40:08 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/10 20:37:01 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void    randomChump(std::string name)
 {
-    Zombie zombie("farouk");
+    Zombie zombie(name);
     zombie.announce();
 }
