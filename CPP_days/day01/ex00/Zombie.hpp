@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 19:08:43 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/10 06:11:11 by fech-cha         ###   ########.fr       */
+/*   Created: 2022/11/10 06:22:35 by fech-cha          #+#    #+#             */
+/*   Updated: 2022/11/10 06:30:12 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-#include "Contact.hpp"
+#include <iostream>
 
-class PhoneBook
+class Zombie
 {
     private:
-        int     _CountContact;
-        Contact _Contacts[8];
+        std::string name;
     public:
-        PhoneBook(void): _CountContact(0)
-        {}
-        ~PhoneBook(void){}
-        void    IncreaseContact(void);
-        void    CheckAdd(void);
-        void    Add(void);
-        void    Search(void) const;
-        void    Exit(void) const;
+        Zombie(std::string name)
+        {
+            this->name = name;
+        }
+        ~Zombie(void)
+        {
+            std::cout << this->name << " is dead for good. " << std::endl;
+        }
+        void    announce(void);  
 };
 
 #endif
