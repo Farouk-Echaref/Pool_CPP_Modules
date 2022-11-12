@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 06:24:47 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/11 18:02:36 by fech-cha         ###   ########.fr       */
+/*   Created: 2022/11/11 21:02:40 by fech-cha          #+#    #+#             */
+/*   Updated: 2022/11/12 02:34:26 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
-Zombie::Zombie(void)
-{
-    std::cout << "Constructor called" << std::endl;
-}
-
-Zombie::Zombie(std::string name): _name(name)
+HumanB::HumanB(std::string name): _name(name)
 {}
 
-void   Zombie::setName(std::string name)
+void    HumanB::setWeapon(Weapon &weaponRef)
 {
-    this->_name = name;
-} 
+    this->_weapon = &weaponRef;
+}
 
-void    Zombie::announce(void)
+void    HumanB::attack(void)
 {
-    std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << this->_name << "  attacks with their " << (*this->_weapon).getType() << std::endl;
     return ;
 }
