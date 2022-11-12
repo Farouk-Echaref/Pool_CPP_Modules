@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 18:01:55 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/13 00:19:02 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/13 00:46:53 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main(int argc, char **argv)
         temp = src;
         std::ifstream Sourc(src);
         std::ofstream Dest(temp.append(".replace"));
+        //if two strings are the same do nothing
         if (Sourc.is_open() && Dest.is_open())
         {
             while (std::getline (Sourc, line))
