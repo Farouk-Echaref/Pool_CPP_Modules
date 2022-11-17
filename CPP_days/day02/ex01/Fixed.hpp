@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:19:28 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/16 23:15:13 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/17 20:06:09 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,3 @@ class Fixed
 std::ostream & operator<<(std::ostream & o, Fixed const & obj);
 
 #endif 
-a = a

@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:25:29 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/16 19:58:39 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/17 20:07:54 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,6 @@ int Fixed::toInt(void) const
 
 std::ostream & operator<<(std::ostream & o, Fixed const & obj)
 {
-    o << obj.getRawBits();
+    o << obj.toFloat();
     return (o);
 }
