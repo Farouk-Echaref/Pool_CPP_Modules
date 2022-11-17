@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:25:29 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/17 18:07:58 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/17 18:58:22 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,16 +67,23 @@ Fixed   Fixed::operator-(Fixed const & obj) const
 
 Fixed   Fixed::operator*(Fixed const & obj) const
 {
-    long long tmp;
+    Fixed tmp;
+    long long tmp2;
 
-    tmp = this->_fp * obj.getRawBits();
-    tmp = tmp >> this->_fract;
-    return (Fixed((int)tmp));
+    tmp2 = (long long)this->_fp * obj.getRawBits();
+    tmp2 = tmp2 >> this->_fract;
+    tmp.setRawBits((int)tmp2);
+    return (tmp);
 }
 
 Fixed   Fixed::operator/(Fixed const & obj) const
 {
-    return (Fixed(((this->_fp << this->_fract) / obj.getRawBits())));
+    Fixed tmp;
+    int tmp2;
+
+    tmp2 = (this->_fp << this->_fract) / obj.getRawBits();
+    tmp.setRawBits(tmp2);
+    return (tmp);
 }
 
 
