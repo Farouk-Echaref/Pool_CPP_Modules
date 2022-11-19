@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:25:29 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/17 19:08:01 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/19 16:12:22 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,18 @@ Fixed & Fixed::operator=(Fixed const & obj)
 
 Fixed   Fixed::operator+(Fixed const & obj) const
 {
-    return (Fixed(this->_fp + obj.getRawBits()));
+    Fixed add;
+
+    add._fp = this->_fp + obj.getRawBits();
+    return (add);
 }
 
 Fixed   Fixed::operator-(Fixed const & obj) const
 {
-    return (Fixed(this->_fp - obj.getRawBits()));
+    Fixed sub;
+
+    sub._fp = this->_fp - obj.getRawBits();
+    return (sub);
 }
 
 Fixed   Fixed::operator*(Fixed const & obj) const
