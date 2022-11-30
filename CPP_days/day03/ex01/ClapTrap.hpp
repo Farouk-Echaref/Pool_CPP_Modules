@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:32:06 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/18 03:55:42 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:37:30 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class ClapTrap
 
         ClapTrap & operator=(ClapTrap const & obj);
 
-        void    attack(const std::string &target);
+        virtual void    attack(const std::string &target);
         void    takeDamage(unsigned int amount);
         void    beRepaired(unsigned int amount);
 
