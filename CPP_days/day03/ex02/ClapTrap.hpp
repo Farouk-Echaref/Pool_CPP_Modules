@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:32:06 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/29 16:38:38 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:24:54 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ClapTrap
         ClapTrap();
         ClapTrap(const std::string name);
         ClapTrap(ClapTrap const & src);
-        ~ClapTrap();
+        virtual ~ClapTrap();
 
         ClapTrap & operator=(ClapTrap const & obj);
 

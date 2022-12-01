@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 00:52:21 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/18 05:49:50 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:16:59 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,35 @@
 
 int main()
 {
-    ClapTrap clap("clap"), trap("trap");
-    ScavTrap scav("scav"), scavT("scavT");
-    FragTrap frag("frag"), Tfrag("Tfrag");
+    // ClapTrap clap("clap"), trap("trap");
+    // ScavTrap scav("scav"), scavT("scavT");
+    // FragTrap frag("frag"), Tfrag("Tfrag");
 
     
-    clap.attack("trap");
-    std::cout << "Clap energy pts: " << clap.getEnergyPoits() << std::endl;
-    trap.takeDamage(5);
-    std::cout << "Trap hit points:" << trap.getHitPoints() << std::endl;
-    trap.beRepaired(5);
+    // clap.attack("trap");
+    // std::cout << "Clap energy pts: " << clap.getEnergyPoits() << std::endl;
+    // trap.takeDamage(5);
+    // std::cout << "Trap hit points:" << trap.getHitPoints() << std::endl;
+    // trap.beRepaired(5);
     
-    std::cout << "Trap hit points:" << trap.getHitPoints() << std::endl;
+    // std::cout << "Trap hit points:" << trap.getHitPoints() << std::endl;
 
-    scav.attack("scavt");
-    std::cout << "scav energy pts: " << scav.getEnergyPoits() << std::endl;
-    scavT.takeDamage(5);
-    std::cout << "scavT hit points:" << scavT.getHitPoints() << std::endl;
-    scavT.beRepaired(5);
+    // scav.attack("scavt");
+    // std::cout << "scav energy pts: " << scav.getEnergyPoits() << std::endl;
+    // scavT.takeDamage(5);
+    // std::cout << "scavT hit points:" << scavT.getHitPoints() << std::endl;
+    // scavT.beRepaired(5);
     
-    std::cout << "scavT hit points:" << scavT.getHitPoints() << std::endl;
+    // std::cout << "scavT hit points:" << scavT.getHitPoints() << std::endl;
 
-    frag.attack("Tfrag");
-    std::cout << "frag energy pts: " << frag.getEnergyPoits() << std::endl;
-    Tfrag.takeDamage(5);
-    std::cout << "Tfrag hit points:" << Tfrag.getHitPoints() << std::endl;
-    Tfrag.beRepaired(5);
+    // frag.attack("Tfrag");
+    // std::cout << "frag energy pts: " << frag.getEnergyPoits() << std::endl;
+    // Tfrag.takeDamage(5);
+    // std::cout << "Tfrag hit points:" << Tfrag.getHitPoints() << std::endl;
+    // Tfrag.beRepaired(5);
     
-    std::cout << "Tfrag hit points:" << Tfrag.getHitPoints() << std::endl;
-    Tfrag.highFiveGuys();
+    // std::cout << "Tfrag hit points:" << Tfrag.getHitPoints() << std::endl;
+    // Tfrag.highFiveGuys();
 
     
     return (0);
