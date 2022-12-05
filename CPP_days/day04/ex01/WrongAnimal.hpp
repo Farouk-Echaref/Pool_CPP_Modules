@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 05:10:04 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/12/04 04:57:04 by fech-cha         ###   ########.fr       */
+/*   Created: 2022/12/05 00:47:02 by fech-cha          #+#    #+#             */
+/*   Updated: 2022/12/05 00:49:04 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 #include <iostream>
 #include <string>
 
-class Brain
+class WrongAnimal
 {
-    private:
-        int _index;
-        std::string _ideas[100];
-    public:
-        Brain();
-        Brain(Brain const & src);
-        ~Brain();
-        Brain & operator=(Brain const & obj);
+    public :
+        WrongAnimal();
+        WrongAnimal(WrongAnimal const & src);
+        ~WrongAnimal();
+
+        WrongAnimal & operator=(WrongAnimal const & obj);
+
+        std::string getType() const;
+        void    makeSound() const;
+    protected:
+        std::string _type;
         
-        void    setIdea(const std::string & idea);
-        std::string getIdea(int pos) const;
+    
 };
 
-# endif
+#endif

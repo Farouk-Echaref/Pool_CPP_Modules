@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 04:42:04 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/12/03 04:54:57 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/12/05 04:00:17 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Dog::Dog()
 
 Dog::Dog(Dog const & src)
 {
+    this->_type = "Dog";
     std::cout << "Dog copy constructor called" << std::endl;
     *this = src;
 }

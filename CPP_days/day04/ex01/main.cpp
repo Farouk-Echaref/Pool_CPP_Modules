@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 04:43:58 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/12/03 04:56:29 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/12/05 05:13:33 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,32 @@
 
 int main()
 {
-    const Animal *animal = new Animal();
-    const Animal *dog = new Dog();
-    const Animal *cat = new Cat();
+    Cat *cat = new Cat();
+    Cat *cat2 = new Cat();
 
-    std::cout << "Animal of type : " << cat->getType() << std::endl;
-    std::cout << "Animal of type : " << dog->getType() << std::endl;
-    
-    animal->makeSound();
-    cat->makeSound();
-    dog->makeSound();
+    cat->setIdea("idea1");
+    cat->setIdea("idea2");
+    cat->setIdea("idea3");
+    cat->setIdea("idea4");
 
-    delete animal;
-    delete dog;
+    *cat2 = *cat;
+
     delete cat;
+    
+    std::cout << cat2->getIdea(1) << std::endl;
+  
+    
+    // animal->makeSound();
+    // cat->makeSound();
+    // dogs->makeSound();
+
+
+    // animal->setIdea("Evolution of animal");
+    
+    // delete animal;
+    // delete [] dogs;
+    // delete [] cats;
+    delete cat2;
     
     return (0);
 }
