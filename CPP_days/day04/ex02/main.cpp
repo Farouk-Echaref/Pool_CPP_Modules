@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 04:43:58 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/12/05 05:22:49 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/12/05 05:44:58 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main()
 {
-    Animal animal;
+    // Animal animal;
     Cat *cat = new Cat();
     Cat *cat2 = new Cat();
 
@@ -30,17 +30,6 @@ int main()
     
     std::cout << cat2->getIdea(1) << std::endl;
   
-    
-    // animal->makeSound();
-    // cat->makeSound();
-    // dogs->makeSound();
-
-
-    // animal->setIdea("Evolution of animal");
-    
-    // delete animal;
-    // delete [] dogs;
-    // delete [] cats;
     delete cat2;
     
     return (0);
