@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 03:25:22 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/12/13 03:56:57 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/12/13 03:16:08 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Bureaucrat
 {
     private:
-        std::string const _name;
+        std::string _name;
         int         _grade;
     public:
         class GradeTooHighException:public std::exception

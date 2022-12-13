@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 22:55:30 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/12/13 03:57:57 by fech-cha         ###   ########.fr       */
+/*   Updated: 2022/12/13 03:31:38 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ Bureaucrat::Bureaucrat(): _name("Bureau"), _grade(100)
     std::cout << "Bureaucrat constructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
+Bureaucrat::Bureaucrat(std::string name, int grade)
 {
     std::cout << "Bureaucrat constructor called with parameters" << std::endl;
+    this->_name = name;
     if (grade < 1)
         throw Bureaucrat::GradeTooHighException();
     else if (grade > 150)
@@ -29,7 +30,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
 }
 
 
-Bureaucrat::Bureaucrat(Bureaucrat const & src): _name(src._name)
+Bureaucrat::Bureaucrat(Bureaucrat const & src)
 {
     std::cout << "Bureaucrat copy constructor called" << std::endl;
     *this = src;
