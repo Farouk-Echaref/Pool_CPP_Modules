@@ -15,8 +15,8 @@
 
 #include <iostream>
 #include <string>
-#include <stdexcept>
 
+//throw except cpp module
 class Bureaucrat
 {
     private:
