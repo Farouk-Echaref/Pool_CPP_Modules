@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 20:47:29 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/12/12 21:13:49 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/15 11:52:15 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,48 +17,38 @@ class Printer
 {
     private:
         std::string _name;
-        int         _avaiPg;
+        int         _availablePaper;
     public:
-        Printer(std::string name, int paper): _name(name), _avaiPg(paper){}
-        
-        void    Print(std::string txt)
+        Printer(std::string name, int paper): _name(name), _availablePaper(paper){}
+        void    Print(std::string txtDoc)
         {
-            std::string thr = "No Paper";
-            int reqPg = txt.length()/10;
+            int required = txtDoc.length() / 10;
             
-            if (reqPg > _avaiPg)
-                //throw thr;
-                // throw 69;
-                throw 'F';
-            std::cout << "Printing..." << txt << std::endl;
-            _avaiPg -= reqPg;
+            if (required > _availablePaper)
+                //throw 'F';
+                throw 69;
+            std::cout << "Printing .., " << txtDoc << std::endl;
+            _availablePaper -= required;
         }
 };
 
 int main()
 {
-    Printer pr("FaroukPrinter", 10);
+    Printer pp("fech-cha", 10);
     try
     {
-        pr.Print("Testing the printer.");
-        pr.Print("Testing the printer.");
-        pr.Print("Testing the printer.");
-        pr.Print("Testing the printer.");
-        pr.Print("Testing the printer.");
-        pr.Print("Testing the printer.");
+        pp.Print("testing testing testing testing testing");
+        pp.Print("testing testing testing testing testing");
+        pp.Print("testing testing testing testing testing");
+        pp.Print("testing testing testing testing testing");
     }
-    catch(std::string execpt)
+    catch(char c)
     {
-        std::cout << "Exception : " << execpt << std::endl;
+        std::cout << "Error type: " << c << std::endl;
     }
-    catch(int except)
+    catch(int nb)
     {
-        std::cout << "Exception : " << except << std::endl;
-    }
-    //default catch 
-    catch(...)
-    {
-        std::cout << "Default catch. " << std::endl;
+        std::cout << "Error type: " << nb << std::endl;
     }
 
     return (0);
