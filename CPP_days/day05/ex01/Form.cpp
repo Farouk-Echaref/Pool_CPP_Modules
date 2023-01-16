@@ -6,21 +6,21 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 03:17:41 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/12/13 03:52:38 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/16 16:22:38 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(): _name("form"), _sign(false), _signGrade(100), _signExecute(30)
+Form::Form(): _name("form"), _sign(false), _signGrade(100), _gradeExecute(30)
 {
     std::cout << "Form constructor called" << std::endl;
 }
 
-Form::Form(const std::string name, bool sign, int const signGrade, int const signExecute): _sign(false), _signGrade(signGrade), _signExecute(signExecute)
+Form::Form(const std::string name, bool sign, int const signGrade, int const gradeExecute): _sign(false), _signGrade(signGrade), _gradeExecute(gradeExecute)
 {
     std::cout << "Form constructor called with parameters" << std::endl;
-    if (signGrade < 1 || signExecute < 1)
+    if (signGrade < 1 || gradeExecute < 1)
         throw Form::GradeTooHighException();
     else if (signGrade > 150 || signGrade > 150)
         throw Form::GradeTooLowException();
@@ -41,9 +41,8 @@ Form::~Form()
 Form & Form::operator=(Form const & obj)
 {
     std::cout << "Form assignment operator called" << std::endl;
-    this->_name = obj._name;
-    this->_grade = obj._grade;
-
+    this->_sign = obj._sign;
+    
     return (*this);
 }
 

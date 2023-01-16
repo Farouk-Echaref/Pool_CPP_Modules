@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 03:04:35 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/12/13 03:52:58 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/16 16:22:57 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Form
         const std::string _name;
         bool _sign;
         const int _signGrade;
-        const int _signExecute;
+        const int _gradeExecute;
     public:
         class GradeTooHighException:public std::exception
         {
@@ -40,7 +40,7 @@ class Form
                 }
         };
         Form();
-        Form(const std::string name, bool sign, int const signGrade, int const signExecute);
+        Form(const std::string name, bool sign, int const signGrade, int const gradeExecute);
         Form(Form const & src);
         virtual ~Form();
 
