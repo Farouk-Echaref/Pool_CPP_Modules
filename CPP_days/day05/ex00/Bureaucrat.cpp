@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 22:55:30 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/12/13 03:57:57 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/16 15:50:30 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat & Bureaucrat::operator=(Bureaucrat const & obj)
 {
+    //name is const
     std::cout << "Bureaucrat assignment operator called" << std::endl;
-    this->_name = obj._name;
-    this->_grade = obj._grade;
+    this->_grade = obj.getGrade();
 
     return (*this);
 }
