@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 03:04:35 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/16 21:09:33 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/16 23:25:24 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ class AForm
         virtual int    getSignGrade() const;
         virtual int    getGradeExecute() const;
         virtual void   beSigned(Bureaucrat &Bur);
+        virtual void   execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream & operator<<(std::ostream & o, AForm const & obj);

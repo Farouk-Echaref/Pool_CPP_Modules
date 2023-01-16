@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 22:18:09 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/16 22:49:12 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/16 23:26:55 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,9 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 {
     std::cout << "ShrubberyCreationForm assignment operator called." << std::endl;
     return (*this);
+}
+
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+{
+    
 }
