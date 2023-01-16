@@ -46,33 +46,33 @@ AForm & AForm::operator=(AForm const & obj)
     return (*this);
 }
 
-// std::string AForm::getName() const
-// {
-//     return (this->_name);
-// }
+std::string AForm::getName() const
+{
+    return (this->_name);
+}
 
-// bool AForm::getSign() const
-// {
-//     return (this->_sign);
-// }
+bool AForm::getSign() const
+{
+    return (this->_sign);
+}
 
-// int AForm::getSignGrade() const
-// {
-//     return (this->_signGrade);
-// }
+int AForm::getSignGrade() const
+{
+    return (this->_signGrade);
+}
 
-// int AForm::getGradeExecute() const
-// {
-//     return (this->_gradeExecute);
-// }
+int AForm::getGradeExecute() const
+{
+    return (this->_gradeExecute);
+}
 
-// void    AForm::beSigned(Bureaucrat &Bur)
-// {
-//     if (Bur.getGrade() <= this->getSignGrade())
-//         this->_sign = true;
-//     else
-//         throw AForm::GradeTooLowException();
-// }
+void    AForm::beSigned(Bureaucrat &Bur)
+{
+    if (Bur.getGrade() <= this->getSignGrade())
+        this->_sign = true;
+    else
+        throw AForm::GradeTooLowException();
+}
 
 std::ostream & operator<<(std::ostream & o, AForm const & obj)
 {

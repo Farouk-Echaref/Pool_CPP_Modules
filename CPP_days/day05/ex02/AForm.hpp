@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 03:04:35 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/16 19:45:24 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/16 21:09:33 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ class AForm
 
         virtual AForm & operator=(AForm const & obj);
         
-        virtual std::string    getName() const = 0;
-        virtual bool   getSign() const = 0;
-        virtual int    getSignGrade() const = 0;
-        virtual int    getGradeExecute() const = 0;
-        virtual void   beSigned(Bureaucrat &Bur) = 0;
+        virtual std::string    getName() const;
+        virtual bool   getSign() const;
+        virtual int    getSignGrade() const;
+        virtual int    getGradeExecute() const;
+        virtual void   beSigned(Bureaucrat &Bur);
 };
 
 std::ostream & operator<<(std::ostream & o, AForm const & obj);
