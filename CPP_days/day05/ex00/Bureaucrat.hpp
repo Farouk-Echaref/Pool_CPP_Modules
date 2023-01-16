@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 03:25:22 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/12/13 03:56:57 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/16 15:31:37 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Bureaucrat
         class GradeTooHighException:public std::exception
         {
             public:
-                const char* what() const throw() 
+                virtual const char* what() const throw() 
                 {
                     return ("Grade Too High.");
                 }
@@ -34,7 +34,7 @@ class Bureaucrat
         class GradeTooLowException:public std::exception
         {
              public:
-                const char* what() const throw() 
+                virtual const char* what() const throw() 
                 {
                     return ("Grade Too Low.");
                 }
