@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 03:17:41 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/16 16:22:38 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/16 16:33:47 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Form::Form(const std::string name, bool sign, int const signGrade, int const gra
     std::cout << "Form constructor called with parameters" << std::endl;
     if (signGrade < 1 || gradeExecute < 1)
         throw Form::GradeTooHighException();
-    else if (signGrade > 150 || signGrade > 150)
+    else if (signGrade > 150 || gradeExecute > 150)
         throw Form::GradeTooLowException();
 }
 
@@ -51,27 +51,23 @@ std::string Form::getName() const
     return (this->_name);
 }
 
-int Form::getGrade() const
+bool Form::getSign() const
 {
-    return (this->_grade);
+    return (this->_sign);
 }
 
-void    Form::increment()
+int Form::getSignGrade() const
 {
-    if (this->_grade == 1)
-        throw Form::GradeTooHighException();
-    this->_grade--;
+    return (this->_signGrade);
 }
 
-void    Form::decrement()
+int Form::getGradeExecute() const
 {
-    if (this->_grade == 150)
-        throw Form::GradeTooLowException();
-    this->_grade++;
+    return (this->_gradeExecute);
 }
 
 std::ostream & operator<<(std::ostream & o, Form const & obj)
 {
-    o << obj.getName() << ", Form grade " << obj.getGrade() <<std::endl;
+    o << "Form name:" << obj.getName() << std::endl << "Form sign: " << obj.getSign() <<std::endl << "Form signGrade: " << obj.getSignGrade() << std::endl << "Form gradeExecute:" << obj.getGradeExecute() << std::endl;
     return (o);
 }

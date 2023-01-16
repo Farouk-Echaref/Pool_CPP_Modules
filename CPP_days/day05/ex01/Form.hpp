@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 03:04:35 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/16 16:22:57 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/16 16:33:41 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,9 @@ class Form
         virtual Form & operator=(Form const & obj);
         
         std::string    getName() const;
-        int    getGrade() const;
-        
-        void    increment();
-        void    decrement();
+        bool   getSign() const;
+        int    getSignGrade() const;
+        int    getGradeExecute() const;
 };
 
 std::ostream & operator<<(std::ostream & o, Form const & obj);
