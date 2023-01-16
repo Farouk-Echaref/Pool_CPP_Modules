@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 03:04:35 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/16 16:33:41 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/16 17:23:17 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ class Form
         bool   getSign() const;
         int    getSignGrade() const;
         int    getGradeExecute() const;
+        void   beSigned(Bureaucrat &Bur);
 };
 
 std::ostream & operator<<(std::ostream & o, Form const & obj);

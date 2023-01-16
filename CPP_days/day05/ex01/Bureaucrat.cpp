@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 22:55:30 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/12/13 03:31:38 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/16 17:21:35 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,16 @@ void    Bureaucrat::decrement()
     if (this->_grade == 150)
         throw Bureaucrat::GradeTooLowException();
     this->_grade++;
+}
+
+void    Bureaucrat::signForm(Form &form) const
+{
+    if (form.getSign() == true)
+    {
+        std::cout << this->getName() << " signed " << form.getName() << std::endl;
+    }
+    else
+        std::cout << this->getName() << " couldn’t sign " << form.getName() << "because " << "the grade is too low"
 }
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & obj)
