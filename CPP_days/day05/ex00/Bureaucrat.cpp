@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 22:55:30 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/16 16:45:07 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/17 15:24:23 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
         throw Bureaucrat::GradeTooHighException();
     else if (grade > 150)
         throw Bureaucrat::GradeTooLowException();
-    else
-        this->_grade = grade;
+    this->_grade = grade;
 }
 
 
@@ -42,7 +41,6 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat & Bureaucrat::operator=(Bureaucrat const & obj)
 {
-    //name is const
     std::cout << "Bureaucrat assignment operator called" << std::endl;
     this->_grade = obj.getGrade();
 
