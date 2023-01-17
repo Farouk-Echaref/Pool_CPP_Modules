@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 03:25:22 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/16 17:19:10 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/17 17:28:42 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ class Bureaucrat
         void    increment();
         void    decrement();
 
-        void signForm(Form &form) const;
+        void    signForm(Form &form) const;
+        void    executeForm(Form const & form);
 };
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & obj);
