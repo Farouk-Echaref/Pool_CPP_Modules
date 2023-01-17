@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 23:19:05 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/17 17:20:21 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/17 17:22:11 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,8 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonFor
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-    std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+    if (this->getSign() == true && executor.getGrade() <= this->getGradeExecute())
+        std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+    else
+        throw PresidentialPardonForm::GradeTooLowException();
 }

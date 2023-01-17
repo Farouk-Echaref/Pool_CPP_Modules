@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 23:07:25 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/17 17:08:28 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/17 17:23:31 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,18 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const &
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-    std::cout << "Drilling Noises !!!!!!" << std::endl;
+    if (this->getSign() == true && executor.getGrade() <= this->getGradeExecute())
+    {
+        std::cout << "Drilling Noises !!!!!!" << std::endl;
     
-    srand((unsigned) time(NULL));
-    int random = rand();
-
-    if (random % 2 == 1)
-        std::cout << this->_target  << " has been robotomized!" << std::endl;
+        srand((unsigned) time(NULL));
+        int random = rand();
+    
+        if (random % 2 == 1)
+            std::cout << this->_target  << " has been robotomized!" << std::endl;
+        else
+            std::cout << "Robotomy has failed." << std::endl;
+    }
     else
-        std::cout << "Robotomy has failed." << std::endl;
+        throw RobotomyRequestForm::GradeTooLowException();
 }
