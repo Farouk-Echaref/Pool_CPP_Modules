@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 22:55:30 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/16 17:21:35 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/17 17:30:32 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void    Bureaucrat::signForm(Form &form) const
         std::cout << this->getName() << " signed " << form.getName() << std::endl;
     }
     else
-        std::cout << this->getName() << " couldn’t sign " << form.getName() << "because " << "the grade is too low"
+        std::cout << this->getName() << " couldn’t sign " << form.getName() << "because the grade is too low." << std::endl;
 }
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & obj)
