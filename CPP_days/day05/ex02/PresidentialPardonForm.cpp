@@ -6,17 +6,18 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 23:19:05 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/16 23:19:53 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/17 17:20:21 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(): _target("PresidentialPardonForm"), AForm("PresidentialPardonForm", false, 25, 5)
+PresidentialPardonForm::PresidentialPardonForm(): _target("PresidentialPardonForm"), AForm("PresidentialPardonForm", this->getSign(), 25, 5)
 {
     std::cout << "PresidentialPardonForm constructor called." << std::endl;
 }
-PresidentialPardonForm::PresidentialPardonForm(std::string target): _target(target), AForm("PresidentialPardonForm", false, 25, 5)
+
+PresidentialPardonForm::PresidentialPardonForm(std::string target): _target(target), AForm("PresidentialPardonForm", this->getSign(), 25, 5)
 {
     std::cout << "PresidentialPardonForm constructor called with parameters." << std::endl;
 }
@@ -36,4 +37,9 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonFor
 {
     std::cout << "PresidentialPardonForm assignment operator called." << std::endl;
     return (*this);
+}
+
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const
+{
+    std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
