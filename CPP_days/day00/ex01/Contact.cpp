@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 20:20:28 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/10 16:50:13 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:31:18 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,12 @@ std::string     Contact::getNickName(void) const
     return (this->_NickName);
 }
 
-// void    show(void) const
-// {
-    
-// }
+std::string Contact::getPhoneNumber(void) const
+{
+    return (this->_PhoneNumber);
+}
+
+std::string Contact::getDarkestSecret(void) const
+{
+    return (this->_DarkestSecret);
+}
