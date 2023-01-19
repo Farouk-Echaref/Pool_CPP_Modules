@@ -6,11 +6,11 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 22:55:30 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/17 17:39:34 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/19 20:51:13 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(): _name("Bureau"), _grade(100)
 {
@@ -28,7 +28,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
     else
         this->_grade = grade;
 }
-
 
 Bureaucrat::Bureaucrat(Bureaucrat const & src)
 {
@@ -74,19 +73,22 @@ void    Bureaucrat::decrement()
     this->_grade++;
 }
 
-void    Bureaucrat::signForm(Form &form) const
+void    Bureaucrat::signAForm(AForm &aform) const
 {
-    if (form.getSign() == true)
+    if (aform.getSign() == true)
     {
-        std::cout << this->getName() << " signed " << form.getName() << std::endl;
+        std::cout << this->getName() << " signed " << aform.getName() << std::endl;
     }
     else
-        std::cout << this->getName() << " couldn’t sign " << form.getName() << "because the grade is too low." << std::endl;
+        std::cout << this->getName() << " couldn’t sign " << aform.getName() << "because the grade is too low." << std::endl;
 }
 
-void    Bureaucrat::executeForm(Form const & form)
+void    Bureaucrat::executeAForm(AForm const & aform)
 {
-    if (//)
+    if (aform.getSign() && this->getGrade() >= aform.getGradeExecute())
+		std::cout << this->getName() << " executed " << aform << std::endl;
+	else
+		std::cout << this->getName() << " couldn't execute " << aform << std::endl;
 }
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & obj)

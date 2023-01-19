@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 23:06:31 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/17 16:51:55 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/19 20:11:04 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include "AForm.hpp"
 
+class Bureaucrat;
+class AForm;
 class RobotomyRequestForm:public AForm
 {
     private:
