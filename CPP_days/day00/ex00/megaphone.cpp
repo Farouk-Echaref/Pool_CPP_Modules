@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex00.cpp                                           :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:29:36 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/09 00:45:15 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:14:32 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,3 @@ int main(int argc, char **argv)
     else
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 }
-
-//compile:
-//c++ -std=c++98 -Wall -Wextra -Werror ex00.cpp -o megaphone

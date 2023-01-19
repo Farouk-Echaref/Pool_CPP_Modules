@@ -1,29 +1,41 @@
-SRC  = ex00.cpp 
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/01/19 15:14:09 by fech-cha          #+#    #+#              #
+#    Updated: 2023/01/19 15:14:11 by fech-cha         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-OBJS = $(SRC:.cpp=.o)
+SRC = megaphone.cpp
+
+CC = c++
+
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+
+RM = rm -f
 
 NAME = megaphone
 
-CC = c++ 
-
-CFLAGS = -std=c++98 -Wall -Wextra -Werror 
-
-RM = rm -rf 
-
-%.o : %.cpp 
-	$(CC) -c $(CFLAGS) $< -o $@
+OBJS = $(SRC:.cpp=.o)
 
 all : $(NAME)
 
-$(NAME) = $(OBJS)
-	$(CC) $(OBJS) -o $(NAME)
+%.o : %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
-clean : 
+$(NAME) : $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
+clean :
 	$(RM) $(OBJS)
 
 fclean : clean
 	$(RM) $(NAME)
 
-re : fclean $(NAME)
+re : fclean all
 
 .PHONY : all clean fclean re
