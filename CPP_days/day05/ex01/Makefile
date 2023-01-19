@@ -6,7 +6,7 @@
 #    By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 17:07:46 by fech-cha          #+#    #+#              #
-#    Updated: 2023/01/19 17:09:49 by fech-cha         ###   ########.fr        #
+#    Updated: 2023/01/19 20:06:55 by fech-cha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ RM = rm -f
 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = Bureaucrat
+NAME = Form
 
 all : $(NAME)
 
