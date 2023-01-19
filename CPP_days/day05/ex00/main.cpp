@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 01:48:44 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/16 16:44:40 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:04:32 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,46 @@ int main()
 {
     // try
     // {
-    //     Bureaucrat obj("farouk", 150);
-    //     std::cout << obj;
-    //     obj.increment();
-    //     obj.decrement();
-    //     obj.decrement();
+    //     Bureaucrat first;
+    //     Bureaucrat second("s2", 100);
+    //     Bureaucrat third("s3", 151);
+    //     Bureaucrat forth(third);    
     // }
-    // catch(const std::exception& e)
+    // catch(std::exception &e)
     // {
     //     std::cerr << e.what() << std::endl;
     // }
-    Bureaucrat obj("farouk", 150);
     
-    Bureaucrat test(obj);
+    // try
+    // {
+    //     Bureaucrat first;
 
-    std::cout << test.getName() << std::endl ; 
+    //     first.decrement();
+    //     std::cout << first.getGrade() << std::endl;
+    // }
+    // catch(std::exception &e)
+    // {
+    //     std::cerr << e.what() << std::endl;
+    // }
+    
+    try
+    {
+        // Bureaucrat test("name", 150);
+        // test.decrement();
+        Bureaucrat test("name", 1);
+        test.increment();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+    
+    // Bureaucrat obj("farouk", 150);
+    
+    // Bureaucrat test(obj);
+
+    // std::cout << test.getName() << std::endl ; 
+    // std::cout << test.getGrade() << std::endl ; 
     return(0);
 }
