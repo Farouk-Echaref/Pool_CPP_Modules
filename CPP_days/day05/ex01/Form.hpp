@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 03:04:35 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/16 17:23:17 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:15:29 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define FORM_HPP
 
 #include "Bureaucrat.hpp"
+
+class Bureaucrat ;
 
 class Form
 {
