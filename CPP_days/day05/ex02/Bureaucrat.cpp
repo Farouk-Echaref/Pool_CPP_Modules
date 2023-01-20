@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 22:55:30 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/19 20:51:13 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/19 23:10:50 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,10 @@ void    Bureaucrat::signAForm(AForm &aform) const
 
 void    Bureaucrat::executeAForm(AForm const & aform)
 {
-    if (aform.getSign() && this->getGrade() >= aform.getGradeExecute())
-		std::cout << this->getName() << " executed " << aform << std::endl;
+    if (aform.getSign() && this->getGrade() <= aform.getGradeExecute())
+		std::cout << this->getName() << " executed " << aform.getName() << std::endl;
 	else
-		std::cout << this->getName() << " couldn't execute " << aform << std::endl;
+		std::cout << this->getName() << " couldn't execute " << aform.getName() << std::endl;
 }
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & obj)
