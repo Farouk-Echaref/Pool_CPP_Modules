@@ -1,26 +1,30 @@
+
 #include <iostream>
-#include <string>
-using namespace std;
-class Int {
-	int x;
-public:
-	Int(int x_in = 0)
-		: x{ x_in }
-	{
-		cout << "Conversion Ctor called" << endl;
-	}
-	operator string()
-	{
-		cout << "Conversion Operator" << endl;
-		return to_string(x);
-	}
-};
-int main()
+// using namespace std;
+// class Base {
+// };
+// class Derived : public Base {
+// };
+// int main()
+// {
+//     Derived d1;
+//     Base* b1 = (Base*)(&d1); // allowed
+//     Base* b2 = static_cast<Base*>(&d1);
+  
+//     return 0;
+// }
+
+int main(void)
 {
-	Int obj(3);
-	string str = obj;
-	obj = 20;
-	string str2 = static_cast<string>(obj);
-	obj = static_cast<Int>(30);
-	return 0;
+	float a = 420.042f; // reference value
+
+	void * b = &a; // implicit reinterpretation cast
+	void * c =  (void *) &a; // explicit reinterpretation cast
+
+	void * d = &a; // implicit promotion -> okay (no problem to move to a more generic type)
+    std::cout << d << std::endl;
+	// int * e = d; // implicit demotion -> not really okay
+    
+	int * f = (int *) d; // explicit demotion -> okay
+    std::cout << f << std::endl;
 }
