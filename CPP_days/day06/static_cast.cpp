@@ -14,17 +14,30 @@
 //     return 0;
 // }
 
+// int main(void)
+// {
+// 	float a = 420.042f; // reference value
+
+// 	void * b = &a; // implicit reinterpretation cast
+// 	void * c =  (void *) &a; // explicit reinterpretation cast
+
+// 	void * d = &a; // implicit promotion -> okay (no problem to move to a more generic type)
+//     std::cout << d << std::endl;
+// 	// int * e = d; // implicit demotion -> not really okay
+    
+// 	int * f = (int *) d; // explicit demotion -> okay
+//     std::cout << f << std::endl;
+// }
+
 int main(void)
 {
-	float a = 420.042f; // reference value
+	int a = 42; // reference value
 
-	void * b = &a; // implicit reinterpretation cast
-	void * c =  (void *) &a; // explicit reinterpretation cast
+	double b = 42.5; // implicit promotion -> ok
+	int c = b; // implicit demotion -> no!
+	int d = static_cast<int>(b); // explicit demotion -> ok
 
-	void * d = &a; // implicit promotion -> okay (no problem to move to a more generic type)
     std::cout << d << std::endl;
-	// int * e = d; // implicit demotion -> not really okay
-    
-	int * f = (int *) d; // explicit demotion -> okay
-    std::cout << f << std::endl;
+
+	return 0;
 }
