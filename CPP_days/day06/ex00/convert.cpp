@@ -6,13 +6,21 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 19:24:09 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/22 22:35:01 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/22 23:09:25 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iomanip> 
 #include <iostream>
 #include <sstream> 
+
+int isNotNum(char *str)
+{
+    for(size_t i = 0; i < strlen(str) ; i++)
+        if (isdigit(str[i]))
+            return (0);
+    return (1);
+}
 
 int isInt(char *str)
 {
@@ -161,7 +169,7 @@ int main(int argc, char **argv)
     std::string str = argv[1];
 
     // //case of char
-    if (strlen(argv[1]) == 1)
+    if (strlen(argv[1]) == 1 && isNotNum(argv[1]))
         castChar(argv[1][0]);
     
     //case of Int
