@@ -6,10 +6,11 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 19:24:09 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/22 16:47:41 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/22 21:18:35 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iomanip> 
 #include <iostream>
 #include <sstream> 
 
@@ -45,6 +46,26 @@ int isFloat(char *str)
     return (-1);
 }
 
+int isDouble(char *str)
+{
+    int i = 0;
+    if (str[i] == '-')
+        i++;
+    while(isdigit(str[i]) && str[i])
+        i++;
+    if (str[i] != '.')
+        return (-1);
+    else
+    {
+        i++;
+        while(isdigit(str[i]) && str[i])
+            i++;
+    }
+    if (str[i] != '\0')
+        return (-1);
+    return (1);
+}
+
 void castChar(char c)
 {
     std::cout << "char: " << c << std::endl;
@@ -63,7 +84,6 @@ void    castInt(char *str)
 {
     int n = static_cast<int>(atoi(str));
 
-    //check non displayable
     if (!isprint(n))
         std::cout << "char: Non displayable" << std::endl;
     else
@@ -75,10 +95,10 @@ void    castInt(char *str)
     std::cout << "int: " << n << std::endl;
     
     float f = static_cast<float>(n);
-    std::cout << "float: " << f << std::endl;
+    std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
 
     double d = static_cast<double>(n);
-    std::cout << "double: " << d << std::endl;
+    std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
 }
 
 void    castFloat(std::string str)
@@ -86,13 +106,30 @@ void    castFloat(std::string str)
     float f;
     
     std::string ft = str.substr(0, str.length() - 1);
-    std::cout << ft << std::endl;
 
     std::stringstream ss(ft);
     ss >> f;
     
-    char c = static_cast<char>(f);
-    std::cout << "char: " << c << std::endl;
+    if (!isprint(f))
+        std::cout << "char: Non displayable" << std::endl;
+    else
+    {
+        char c = static_cast<char>(f);
+        std::cout << "char: " << c << std::endl;   
+    }
+    
+    int n = static_cast<int>(f);
+    std::cout << "int :" << n << std::endl;
+
+    std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
+
+    double d = static_cast<double>(f);
+    std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
+}
+
+void castDouble(std::string str)
+{
+    
 }
 
 int main(int argc, char **argv)
@@ -113,8 +150,12 @@ int main(int argc, char **argv)
        castInt(argv[1]);
 
     //case of float
-    if(isFloat(argv[1]))
+    else if(isFloat(argv[1]))
         castFloat(str);
+
+    //case of double
+    else if(isDouble(argv[1]))
+        
     
     return (0);
 }
