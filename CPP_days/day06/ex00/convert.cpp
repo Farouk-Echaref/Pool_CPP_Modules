@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 19:24:09 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/22 23:09:25 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:52:06 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,20 @@ void castDouble(std::string str)
     std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
 }
 
+void    errorInput(void)
+{
+    std::cout << "char: Impossible" << std::endl;
+    std::cout << "int: Impossible" << std::endl;
+    std::cout << "float: nanf" << std::endl;
+    std::cout << "double: nan" << std::endl;
+}
+
+//handle -inf/+inf/nanf/INT_MAX...
+// void specialCases(std::string str)
+// {
+    
+// }
+
 int main(int argc, char **argv)
 {
     if (argc != 2)
@@ -184,7 +198,7 @@ int main(int argc, char **argv)
     else if(isDouble(argv[1]))
         castDouble(str);
     else 
-        std::cout << "Impossible Conversion!" << std::endl;
+        errorInput();
     
     return (0);
 }
