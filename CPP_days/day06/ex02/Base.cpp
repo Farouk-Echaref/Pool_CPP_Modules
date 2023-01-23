@@ -6,12 +6,17 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 23:56:20 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/23 00:52:11 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:45:14 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+
 #include <iostream>
+
+Base::~Base(){}
 
 Base * generate(void)
 {
@@ -33,26 +38,51 @@ void identify(Base *p)
     if (ptr1)
         std::cout << "P is of type A()" << std::endl;
     
-    // B *ptr2 = dynamic_cast<B*>(p);
-    // if (ptr2)
-    //     std::cout << "P is of type B()" << std::endl;
+    B *ptr2 = dynamic_cast<B*>(p);
+    if (ptr2)
+        std::cout << "P is of type B()" << std::endl;
 
-    // C *ptr3 = dynamic_cast<C*>(p);
-    // if (ptr3)
-    //     std::cout << "P is of type C()" << std::endl;
+    C *ptr3 = dynamic_cast<C*>(p);
+    if (ptr3)
+        std::cout << "P is of type C()" << std::endl;
 }
 
-
-//try/catch
 void identify(Base& p)
 {
-    A &ptr = dynamic_cast<A&>(p);   
+    try{
+        A &ptr1 = dynamic_cast<A&>(p);
+        std::cout << "P is of type A()" << std::endl;
+        (void)ptr1;
+    }
+    catch(std::exception & e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    try{
+        B &ptr2 = dynamic_cast<B&>(p);
+        std::cout << "P is of type B()" << std::endl;
+        (void)ptr2;
+    }
+    catch(std::exception & e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    try{
+        C &ptr3 = dynamic_cast<C&>(p);
+        std::cout << "P is of type C()" << std::endl;
+        (void)ptr3;
+    }
+    catch(std::exception & e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
 }
 
 int main()
 {
-    Base *ptr = new A();
+    Base *ptr = generate();
     identify(ptr);
-   
+    identify(*ptr);
+    
     return (0);
 }

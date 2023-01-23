@@ -6,7 +6,7 @@
 #    By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/22 23:53:23 by fech-cha          #+#    #+#              #
-#    Updated: 2023/01/23 00:46:02 by fech-cha         ###   ########.fr        #
+#    Updated: 2023/01/23 11:31:22 by fech-cha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJS = $(SRC:.cpp=.o)
 
 all : $(NAME)
 
-%.o : %.cpp Base.hpp
+%.o : %.cpp Base.hpp A.hpp B.hpp C.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJS)

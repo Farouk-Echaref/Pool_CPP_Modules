@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/22 23:53:50 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/23 11:28:42 by fech-cha         ###   ########.fr       */
+/*   Created: 2023/01/23 11:28:12 by fech-cha          #+#    #+#             */
+/*   Updated: 2023/01/23 11:28:32 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-# define BASE_HPP
+#ifndef C_HPP
+# define C_HPP
 
-class Base
+#include "Base.hpp"
+
+class C:public Base
 {
-    public:
-        virtual ~Base();
+    
 };
-
-Base * generate(void);
-void identify(Base* p);
-void identify(Base& p);
 
 #endif
