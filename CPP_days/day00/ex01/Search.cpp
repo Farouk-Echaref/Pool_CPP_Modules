@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   search.cpp                                         :+:      :+:    :+:   */
+/*   Search.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:53:18 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/19 16:02:42 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:26:12 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,34 @@ void    PhoneBook::Search(void) const
         std::string LastName = this->_Contacts[i].getLastName();
         std::string NickName = this->_Contacts[i].getNickName();
         
+        if (FirstName.length() > 10)
+        {
+            FirstName = FirstName.substr(0,10);
+            FirstName.back() = '.';
+        }
+
+        if (LastName.length() > 10)
+        {
+            LastName = LastName.substr(0,10);
+            LastName.back() = '.';
+        }
+        if (NickName.length() > 10)
+        {
+            NickName = NickName.substr(0,10);
+            NickName.back() = '.';
+        }
+        
         std::cout << std::setw(10);
         std::cout << i << std::right; 
         std::cout << "|";
         std::cout << std::setw(10);
-        std::cout << FirstName.substr(0,10) << std::right;
+        std::cout << FirstName << std::right;
         std::cout << "|";
         std::cout << std::setw(10);
-        std::cout << LastName.substr(0,10) << std::right;
+        std::cout << LastName << std::right;
         std::cout << "|";
         std::cout << std::setw(10);
-        std::cout << NickName.substr(0,10)  << std::right << std::endl;
+        std::cout << NickName << std::right << std::endl;
     }
     
     std::cout << "Enter Index: " << std::endl;
