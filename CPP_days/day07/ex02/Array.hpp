@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 19:56:10 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/24 01:22:14 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/24 02:17:01 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,7 @@ class Array
         T & operator[](int index)
         {
             if (index >= _size)
-            {
-                std::string err = "Index out of bounds";
-                throw (err);
-            }
+                throw (std::out_of_range("Index out of bounds"));
             return _arr[index];
         }
         
