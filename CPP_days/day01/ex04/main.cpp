@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 18:01:55 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/11/13 00:46:53 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:27:11 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ int main(int argc, char **argv)
         std::string s2(argv[3]);
         temp = src;
         std::ifstream Sourc(src);
+        if (!Sourc.is_open())
+            exit(1);
         std::ofstream Dest(temp.append(".replace"));
-        //if two strings are the same do nothing
         if (Sourc.is_open() && Dest.is_open())
         {
             while (std::getline (Sourc, line))
@@ -44,4 +45,7 @@ int main(int argc, char **argv)
         } 
         Sourc.close();
     }
+    else
+        std::cout << "Not Enough Arguments!" << std::endl;
+    return (0);
 }
