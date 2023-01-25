@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 13:05:33 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/25 13:37:07 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:40:05 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
 
     // std::cout << arr[17] << std::endl;
 
-    std::array<int, 10> brr;
+    std::array<int, 5> brr;
 
     //this won't compile in debug mode
     // brr[17] = 7;
@@ -36,7 +36,7 @@ int main(void)
 
     //or use an iterator 
 
-    for (std::array<int, 10>::iterator i = brr.begin(); i != brr.end(); i++)
+    for (std::array<int, 5>::iterator i = brr.begin(); i != brr.end(); i++)
         *i = 5;
     std::cout << brr[2] << std::endl;
 
@@ -44,6 +44,9 @@ int main(void)
 
     std::fill(brr.begin(), brr.end(), 69);
     std::cout << brr[2] << std::endl;
+
+    //initialization list
+    brr = {1, 2, 3, 4, 5};
 
     return (0);
 }
