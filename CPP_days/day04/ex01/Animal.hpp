@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 00:29:16 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/12/05 04:03:13 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/26 19:55:23 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Animal
         Animal(Animal const & src);
         virtual ~Animal();
 
-        Animal & operator=(Animal const & obj);
+        virtual Animal & operator=(Animal const & obj);
 
         std::string getType() const;
         virtual void    makeSound() const;
