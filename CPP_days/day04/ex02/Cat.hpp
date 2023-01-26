@@ -6,17 +6,17 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 02:19:17 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/12/05 03:07:32 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:55:39 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 # define CAT_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat:public Animal
+class Cat:public AAnimal
 {
     private:
         Brain *_brain;

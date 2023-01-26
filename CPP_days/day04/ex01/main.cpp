@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 04:43:58 by fech-cha          #+#    #+#             */
-/*   Updated: 2022/12/05 05:13:33 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/26 18:00:24 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,6 @@ int main()
     
     std::cout << cat2->getIdea(1) << std::endl;
   
-    
-    // animal->makeSound();
-    // cat->makeSound();
-    // dogs->makeSound();
-
-
-    // animal->setIdea("Evolution of animal");
-    
-    // delete animal;
-    // delete [] dogs;
-    // delete [] cats;
     delete cat2;
     
     return (0);
