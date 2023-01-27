@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 23:18:19 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/20 16:46:22 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/27 22:39:37 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class PresidentialPardonForm:public AForm
         PresidentialPardonForm(std::string target);
         PresidentialPardonForm(PresidentialPardonForm const & src);
         virtual ~PresidentialPardonForm();
-        virtual PresidentialPardonForm & operator=(PresidentialPardonForm const & obj);
+        PresidentialPardonForm & operator=(PresidentialPardonForm const & obj);
         
         virtual void    execute(Bureaucrat const & executor) const;
 };

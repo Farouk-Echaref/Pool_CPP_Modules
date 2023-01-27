@@ -6,18 +6,18 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 23:19:05 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/20 15:25:20 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/27 22:37:43 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(): AForm("PresidentialPardonForm", this->getSign(), 25, 5), _target("PresidentialPardonForm")
+PresidentialPardonForm::PresidentialPardonForm(): AForm("PresidentialPardonForm", 25, 5), _target("PresidentialPardonForm")
 {
     std::cout << "PresidentialPardonForm constructor called." << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target): AForm("PresidentialPardonForm", this->getSign(), 25, 5), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target): AForm("PresidentialPardonForm", 25, 5), _target(target)
 {
     std::cout << "PresidentialPardonForm constructor called with parameters." << std::endl;
 }
@@ -35,8 +35,8 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonForm const & obj)
 {
-    (void)obj;
     std::cout << "PresidentialPardonForm assignment operator called." << std::endl;
+    this->_target = obj._target;
     return (*this);
 }
 

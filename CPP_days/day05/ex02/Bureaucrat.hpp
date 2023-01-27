@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 03:25:22 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/19 20:22:25 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/27 22:39:25 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ class Bureaucrat
         Bureaucrat(Bureaucrat const & src);
         virtual ~Bureaucrat();
 
-        virtual Bureaucrat & operator=(Bureaucrat const & obj);
+        Bureaucrat & operator=(Bureaucrat const & obj);
         
         std::string    getName() const;
         int    getGrade() const;

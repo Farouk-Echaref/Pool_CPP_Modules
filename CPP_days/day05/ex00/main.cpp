@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 01:48:44 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/19 17:04:32 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/27 21:55:34 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,17 @@ int main()
     //     std::cerr << e.what() << std::endl;
     // }
     
-    try
-    {
-        // Bureaucrat test("name", 150);
-        // test.decrement();
-        Bureaucrat test("name", 1);
-        test.increment();
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+    // try
+    // {
+    //     Bureaucrat test("name", 150);
+    //     test.decrement();
+    //     Bureaucrat test("name", 1);
+    //     test.increment();
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    // }
     
     
     // Bureaucrat obj("farouk", 150);
@@ -57,5 +57,6 @@ int main()
 
     // std::cout << test.getName() << std::endl ; 
     // std::cout << test.getGrade() << std::endl ; 
+    
     return(0);
 }

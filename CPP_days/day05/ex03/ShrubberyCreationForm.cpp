@@ -6,17 +6,17 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 22:18:09 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/20 16:56:06 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/27 22:38:59 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(): AForm("ShrubberyCreationForm", this->getSign(), 145, 137), _target("ShrubberyCreationForm")
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm("ShrubberyCreationForm", 145, 137), _target("ShrubberyCreationForm")
 {
     std::cout << "ShrubberyCreationForm constructor called." << std::endl;
 }
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("ShrubberyCreationForm", this->getSign(), 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
     std::cout << "ShrubberyCreationForm constructor called with parameters." << std::endl;
 }
@@ -34,8 +34,8 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm const & obj)
 {
-    (void)obj;
     std::cout << "ShrubberyCreationForm assignment operator called." << std::endl;
+    this->_target = obj._target;
     return (*this);
 }
 

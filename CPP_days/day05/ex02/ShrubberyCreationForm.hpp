@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 21:12:27 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/19 23:00:08 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/27 22:13:46 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class ShrubberyCreationForm:public AForm
         ShrubberyCreationForm(std::string target);
         ShrubberyCreationForm(ShrubberyCreationForm const & src);
         virtual ~ShrubberyCreationForm();
-        virtual ShrubberyCreationForm & operator=(ShrubberyCreationForm const & obj);
+        ShrubberyCreationForm & operator=(ShrubberyCreationForm const & obj);
         
         virtual void    execute(Bureaucrat const & executor) const;
 };

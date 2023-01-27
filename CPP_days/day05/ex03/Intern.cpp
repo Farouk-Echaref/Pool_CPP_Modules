@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:37:20 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/20 17:56:35 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/27 22:48:10 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ AForm   *Intern::makeForm(std::string formName, std::string target)
 {
     AForm *form;
     
-    int i = ((formName == "Shrubbery") * 1) + ((formName == "Robotomy") * 2) + ((formName == "Presidential") * 3);
+    int i = ((formName == "Shruberry") * 1) + ((formName == "Robotomy") * 2) + ((formName == "Presidential") * 3);
     switch (i)
     {
         case 1:

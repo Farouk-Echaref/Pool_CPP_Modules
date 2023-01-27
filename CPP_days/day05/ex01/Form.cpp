@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 03:17:41 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/16 17:23:10 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/27 22:06:33 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Form::Form(): _name("form"), _sign(false), _signGrade(100), _gradeExecute(30)
     std::cout << "Form constructor called" << std::endl;
 }
 
-Form::Form(const std::string name, bool sign, int const signGrade, int const gradeExecute): _name(name), _sign(sign), _signGrade(signGrade), _gradeExecute(gradeExecute)
+Form::Form(const std::string name, int const signGrade, int const gradeExecute): _name(name), _sign(false), _signGrade(signGrade), _gradeExecute(gradeExecute)
 {
     std::cout << "Form constructor called with parameters" << std::endl;
     if (signGrade < 1 || gradeExecute < 1)

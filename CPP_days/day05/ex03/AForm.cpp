@@ -17,7 +17,7 @@ AForm::AForm(): _name("AForm"), _sign(false), _signGrade(100), _gradeExecute(30)
     std::cout << "AForm constructor called" << std::endl;
 }
 
-AForm::AForm(const std::string name, bool sign, int const signGrade, int const gradeExecute): _name(name), _sign(sign), _signGrade(signGrade), _gradeExecute(gradeExecute)
+AForm::AForm(const std::string name, int const signGrade, int const gradeExecute): _name(name), _sign(false), _signGrade(signGrade), _gradeExecute(gradeExecute)
 {
     std::cout << "AForm constructor called with parameters" << std::endl;
     if (signGrade < 1 || gradeExecute < 1)

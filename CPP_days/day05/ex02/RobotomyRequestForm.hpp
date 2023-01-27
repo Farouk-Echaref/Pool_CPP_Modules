@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 23:06:31 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/19 20:11:04 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/27 22:15:19 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class RobotomyRequestForm:public AForm
         RobotomyRequestForm(std::string target);
         RobotomyRequestForm(RobotomyRequestForm const & src);
         virtual ~RobotomyRequestForm();
-        virtual RobotomyRequestForm & operator=(RobotomyRequestForm const & obj);
+        RobotomyRequestForm & operator=(RobotomyRequestForm const & obj);
 
         virtual void    execute(Bureaucrat const & executor) const;
 };

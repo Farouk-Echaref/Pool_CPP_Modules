@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 03:04:35 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/19 23:00:36 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/27 22:12:47 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ class AForm
                 }
         };
         AForm();
-        AForm(const std::string name, bool sign, int const signGrade, int const gradeExecute);
+        AForm(const std::string name, int const signGrade, int const gradeExecute);
         AForm(AForm const & src);
         virtual ~AForm();
 
-        virtual AForm & operator=(AForm const & obj);
+        AForm & operator=(AForm const & obj);
         
         virtual std::string    getName() const;
         virtual bool   getSign() const;
