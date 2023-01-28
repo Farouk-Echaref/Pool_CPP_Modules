@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 23:56:20 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/23 11:45:14 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/28 20:09:33 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ Base::~Base(){}
 Base * generate(void)
 {
     Base *ptr;
-    int random = 100 + (rand() % 101);
+    
+    srand((unsigned) time(NULL));
+	int random = rand();
 
-    if (random % 2 == 0)    
+
+    if (random % 3 == 0)    
         ptr = new A();
-    else if (random % 2 == 1)
+    else if (random % 3 == 1)
         ptr = new B();
     else
         ptr = new C();
