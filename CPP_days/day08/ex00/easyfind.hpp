@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 04:13:39 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/26 21:02:35 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/28 22:36:42 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typename T::const_iterator easyfind(T const &tmp, int a)
     
     it = std::find(tmp.begin(), tmp.end(), a);
     
-    if (it != tmp.begin())
+    if (it != tmp.end())
         return (it);
     throw std::out_of_range("Error! The element is not found");
 }

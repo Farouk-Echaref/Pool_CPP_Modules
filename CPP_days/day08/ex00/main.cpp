@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 04:39:39 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/26 05:48:15 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/28 22:37:07 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main()
 
     try
     {
-        std::cout << *(::easyfind(lst, 10)) << std::endl;
+        std::cout << *(::easyfind(lst, 69)) << std::endl;
     }
     catch(const std::exception& e)
     {
