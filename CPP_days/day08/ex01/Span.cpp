@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 22:19:58 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/29 23:45:50 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/30 22:23:04 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Span::Span(): _count(0), _N(5)
 
 Span::Span(unsigned int n): _count(0), _N(n)
 {
-    std::cout << "Span constructor with string argument called called" << std::endl;
+    std::cout << "Span constructor with argument called" << std::endl;
 }
 
 Span::Span(Span const & src)
@@ -35,11 +35,10 @@ Span::~Span()
 
 Span & Span::operator=(Span const & obj)
 {
-    (void)obj;
     std::cout << "Span assignment operator called" << std::endl;
-    // this->_N = obj._N;
-    // this->_count = obj._count;
-    // this->_vec = obj._vec;
+    this->_N = obj._N;
+    this->_count = obj._count;
+    this->_vec = obj._vec;
 
     return (*this);
 }
@@ -90,7 +89,17 @@ int Span::shortestSpan()
     return (shortSpan);
 }
 
-// void    Span::customAdd(int num)
-// {
+void    Span::customAdd()
+{
+    std::vector<int>::iterator it = this->_vec.begin();
+    std::vector<int>::iterator ite = this->_vec.end();
     
-// }
+    srand((unsigned) time(NULL));
+    while (it != ite)
+    {
+        int random = 1 + (rand() % 1000);
+        *it = random;
+        std::cout << *it << std::endl;
+        it++;
+    }
+}

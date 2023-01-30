@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 22:17:51 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/29 20:45:43 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/30 22:20:32 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Span
         std::vector<int>  _vec;
         
     public:
+        typedef std::vector<int>::iterator iterator;
         Span();
         Span(unsigned int n);
         Span(Span const & src);
@@ -37,7 +38,7 @@ class Span
         void    addNumber(int nb);
         int     shortestSpan();
         int     longestSpan();
-        void    customAdd(int num);
+        void    customAdd();
         
 };
 
