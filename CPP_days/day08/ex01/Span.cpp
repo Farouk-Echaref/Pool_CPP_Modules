@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 22:19:58 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/30 22:23:04 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/30 22:46:05 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,17 +89,12 @@ int Span::shortestSpan()
     return (shortSpan);
 }
 
-void    Span::customAdd()
+void    Span::customAdd(iterator start, iterator ending)
 {
-    std::vector<int>::iterator it = this->_vec.begin();
-    std::vector<int>::iterator ite = this->_vec.end();
-    
-    srand((unsigned) time(NULL));
-    while (it != ite)
+    while (start != ending && this->_count < this->_N)
     {
-        int random = 1 + (rand() % 1000);
-        *it = random;
-        std::cout << *it << std::endl;
-        it++;
+        this->_vec.push_back(*start);
+        start++;
+        this->_count++;
     }
 }
