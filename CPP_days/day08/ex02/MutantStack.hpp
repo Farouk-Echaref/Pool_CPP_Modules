@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 00:55:55 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/30 22:51:50 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/30 23:25:57 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ template<typename T, typename Container = std::deque<T> >
 class MutantStack: public std::stack<T, Container> 
 {
     public:
-        MutantStack();
+        MutantStack(){};
         MutantStack(MutantStack & obj)
         {
             *this = obj;
@@ -34,7 +34,7 @@ class MutantStack: public std::stack<T, Container>
 			this->c = obj.c;
 			return (*this);
 		}
-        ~MutantStack();
+        ~MutantStack(){};
         typedef typename Container::iterator iterator;
         typedef typename Container::const_iterator const_iterator;
 
