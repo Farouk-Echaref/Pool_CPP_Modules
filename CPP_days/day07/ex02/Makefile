@@ -6,7 +6,7 @@
 #    By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 19:55:11 by fech-cha          #+#    #+#              #
-#    Updated: 2023/01/24 01:21:09 by fech-cha         ###   ########.fr        #
+#    Updated: 2023/01/30 17:09:04 by fech-cha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-NAME = Array
+NAME = myArray
 
 OBJS = $(SRC:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 19:56:10 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/24 02:17:01 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:06:43 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,23 @@ class Array
                 _arr[i] = obj._arr[i];
             return (*this);
         }
+        ~Array()
+        {
+            std::cout << "Array Deconstructor!" << std::endl;
+            delete _arr;
+            _arr = NULL;
+        }
 
         T & operator[](int index)
         {
-            if (index >= _size)
+            if (index > _size)
+                throw (std::out_of_range("Index out of bounds"));
+            return _arr[index];
+        }
+        
+        T const & operator[](int index) const
+        {
+            if (index > _size)
                 throw (std::out_of_range("Index out of bounds"));
             return _arr[index];
         }
@@ -69,7 +82,7 @@ class Array
         {
             return (_size);
         }
-
+        
 };
 
 
