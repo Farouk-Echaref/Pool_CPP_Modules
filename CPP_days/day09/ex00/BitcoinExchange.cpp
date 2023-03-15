@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 03:47:40 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/15 04:36:56 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/15 06:13:13 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,65 @@ Btc::~Btc()
 
 Btc & Btc::operator=(Btc const & obj)
 {
+    (void)obj;
     std::cout << "Btc assignment operator called" << std::endl;
     return (*this);
 }
 
+void    Btc::printMap(void)
+{
+    std::map<std::string, float>::iterator it = this->_data.begin();
+    for(; it != this->_data.end(); it++)
+        std::cout << "map[\"" << it->first << "\"]" << " = " << it->second << std::endl;
+}
+
+void    Btc::setData(std::string str, float ft)
+{
+    this->_data[str] = ft;
+}
+
+int Btc::parseData(std::string line)
+{
+    float value;
+    std::string key;
+    
+    char delim[] = " |";
+
+    char *token = strtok(&line[0], delim);
+    key = token;
+    while (token != NULL)
+    {
+        token = strtok(NULL, delim);
+        if (token != NULL)
+        {
+            std::string tmp = token;
+            std::stringstream ss(tmp);
+            ss >> value;
+        }
+    }
+    std::cout << key << " : " << value << std::endl;
+    Btc::setData(key, value);
+    //check and print 
+
+    return (0);
+}
+
+void    Btc::readData(std::string filename)
+{
+    std::string line;
+    std::ifstream Src(filename);
+    
+    if (Src.is_open())
+    {
+        while (std::getline(Src, line))
+        {
+            if (Btc::parseData(line) < 0)
+            {
+                
+            }
+        }
+    }
+    Src.close();
+    
+    return ;
+}

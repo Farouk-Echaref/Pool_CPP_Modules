@@ -6,18 +6,18 @@
 #    By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/15 00:56:21 by fech-cha          #+#    #+#              #
-#    Updated: 2023/03/15 03:38:35 by fech-cha         ###   ########.fr        #
+#    Updated: 2023/03/15 04:51:25 by fech-cha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SSRC = main.cpp \
-	BitcoinExchange.cpp
+SRC = main.cpp \
+	BitcoinExchange.cpp \
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-RM = rm -f
+RM = rm -rf
 
 NAME = btc
 
