@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 03:47:40 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/16 01:31:46 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/16 05:46:41 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,27 @@ void    Btc::setData(std::string str, float ft)
     this->_data.insert(std::make_pair(str, ft));
 }
 
+static bool isValidDate(const std::string& date)
+{
+    struct tm timeStruct;
+
+    if (strptime(date.c_str(), "%Y-%m-%d", &timeStruct) == NULL) {
+        return false;
+    }
+    return true;
+}
+
+static bool isValidLine(const std::string& line)
+{
+    std::string date, sep, value, rest;
+    std::istringstream test(line);
+
+    test>>date>>sep>>value;
+    if (test>>rest || sep != "|")
+        return (false);
+    return (true)
+}
+
 int Btc::parseData(std::string line)
 {
     float value;
@@ -66,7 +87,7 @@ int Btc::parseData(std::string line)
             ss >> value;
         }
     }
-    Btc::setData(key, value);
+    // Btc::setData(key, value);
 
     return (0);
 }
