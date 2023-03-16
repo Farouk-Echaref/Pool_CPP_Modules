@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 03:47:40 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/16 01:28:20 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/16 01:31:46 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,7 @@ int Btc::parseData(std::string line)
             ss >> value;
         }
     }
-    // std::cout << key << " : " << value << std::endl;
     Btc::setData(key, value);
-    //check and print 
 
     return (0);
 }
