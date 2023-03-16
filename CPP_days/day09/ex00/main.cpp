@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 03:48:07 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/16 22:55:45 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/16 23:27:20 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ int main(int argc, char **argv)
         std::string src(argv[1]);
         
         btc.readData(src);
-        btc.printMap();
-        btc.execDB();
+        btc.execMap();
     }
     else    
         std::cout << "Not enough arguments." << std::endl;
