@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 03:47:00 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/15 05:53:26 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/16 01:26:23 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@
 #include <fstream>
 #include <sstream> 
 #include <iomanip> 
+#include <utility>
+
 class Btc
 {
     private:
-        std::map<std::string, float> _data;
+        std::multimap<std::string, float> _data;
         
     public:
         Btc();

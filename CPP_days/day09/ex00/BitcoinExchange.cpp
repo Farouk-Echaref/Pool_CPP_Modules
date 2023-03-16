@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 03:47:40 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/15 06:13:13 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/16 01:28:20 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void    Btc::printMap(void)
 
 void    Btc::setData(std::string str, float ft)
 {
-    this->_data[str] = ft;
+    this->_data.insert(std::make_pair(str, ft));
 }
 
 int Btc::parseData(std::string line)
@@ -66,7 +66,7 @@ int Btc::parseData(std::string line)
             ss >> value;
         }
     }
-    std::cout << key << " : " << value << std::endl;
+    // std::cout << key << " : " << value << std::endl;
     Btc::setData(key, value);
     //check and print 
 
