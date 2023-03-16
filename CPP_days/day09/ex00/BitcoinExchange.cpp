@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 03:47:40 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/16 05:46:41 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/16 06:10:00 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,20 +63,19 @@ static bool isValidLine(const std::string& line)
     std::istringstream test(line);
 
     test>>date>>sep>>value;
-    if (test>>rest || sep != "|")
+    if (test>>rest || sep != "|" || !isValidDate(date))
         return (false);
-    return (true)
+    return (true);
 }
 
 int Btc::parseData(std::string line)
-{
-    float value;
-    std::string key;
-    
+{   
     char delim[] = " |";
 
+    if (isValidLine(line) == false)
+        return (-1);
     char *token = strtok(&line[0], delim);
-    key = token;
+    this->_key = token;
     while (token != NULL)
     {
         token = strtok(NULL, delim);
@@ -84,10 +83,11 @@ int Btc::parseData(std::string line)
         {
             std::string tmp = token;
             std::stringstream ss(tmp);
-            ss >> value;
+            ss >> this->_value;
         }
     }
-    // Btc::setData(key, value);
+    if (isValidDate(this->_key))
+        Btc::setData(this->_key, this->_value);
 
     return (0);
 }
