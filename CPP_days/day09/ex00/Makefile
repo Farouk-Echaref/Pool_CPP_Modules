@@ -6,12 +6,13 @@
 #    By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/15 00:56:21 by fech-cha          #+#    #+#              #
-#    Updated: 2023/03/15 04:51:25 by fech-cha         ###   ########.fr        #
+#    Updated: 2023/03/18 23:42:37 by fech-cha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = main.cpp \
 	BitcoinExchange.cpp \
+	errorManagement.cpp
 
 CC = c++
 

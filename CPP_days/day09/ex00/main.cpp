@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 03:48:07 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/16 23:27:20 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/18 23:45:16 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@ int main(int argc, char **argv)
         }
         test.close();
         Btc btc;
+        std::string path = "./cpp_09/data.csv";
         std::string src(argv[1]);
         
-        btc.readData(src);
+        btc.readDB(path);
         btc.execMap();
+        btc.getInput(src);
     }
     else    
         std::cout << "Not enough arguments." << std::endl;

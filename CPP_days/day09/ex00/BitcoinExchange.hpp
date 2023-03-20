@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 03:47:00 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/16 23:55:37 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/18 23:43:28 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@
 class Btc
 {
     private:
-        std::multimap<std::string, std::string>     _data;
-        std::string                                 _date;
-        std::string                                 _value;
+        std::map<std::string, std::string>          _db;
+        // std::string                                 _date;
+        // std::string                                 _value;
         
     public:
         Btc();
@@ -37,13 +37,15 @@ class Btc
         ~Btc();
         Btc & operator=(Btc const & obj);
 
-        void    readData(std::string filename);
-        void    parseData(std::string line);
+        void    readDB(std::string filename);
+        void    getInput(std::string filename);
+        void    parseDB(std::string line);
         void    setData(std::string key, std::string value);
         void    execMap(void);
         void    execDB(const std::pair<std::string, std::string>& element);
-        void    printOutput(const std::pair<std::string, std::string>& element, std::string rate);
-        
+        void    printOutput(const std::pair<std::string, std::string>& element, std::string rate);     
 };
+
+bool isValidDate(const std::string& date);
 
 #endif
