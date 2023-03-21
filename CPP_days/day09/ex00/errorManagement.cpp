@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 23:36:34 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/21 02:39:39 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/21 03:17:15 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ bool isValidDate(const std::string& date)
     int day = atoi(day_str.c_str());
 
     if (strptime(date.c_str(), "%Y-%m-%d", &timeStruct) == NULL) {
-        return false;
+        return (false);
     }
     if (checkYear(year) == false && month == 2 && day > 28)
-        return false;
-    return true;
+        return (false);
+    return (true);
 }
 
 void    Btc::syntaxChecker(std::string line)
