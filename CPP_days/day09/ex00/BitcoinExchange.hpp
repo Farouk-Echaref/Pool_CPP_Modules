@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 03:47:00 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/21 02:46:53 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/21 19:17:18 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 #include <iomanip> 
 #include <utility>
 #include <time.h>
+#include <exception> 
 
 class Btc
 {

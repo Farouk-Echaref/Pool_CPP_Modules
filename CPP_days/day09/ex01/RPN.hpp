@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 03:59:58 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/21 04:48:43 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/21 19:17:12 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 #include <sstream> 
 #include <iomanip> 
 #include <utility>
+#include <ctype.h>
+#include <exception> 
 
 class Rpn
 {
@@ -38,8 +40,7 @@ class Rpn
         Rpn & operator=(Rpn const & obj);
         
         void    evalExpr(std::string expr);
-        int     checkExpr(char c);
-        int     checkNumr(char c);
+        int     checkExpr(std::string c);
 };
 
 #endif
