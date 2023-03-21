@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 03:47:00 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/21 02:39:46 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/21 02:46:53 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Btc
         void    setData(std::string key, std::string value);
         void    syntaxChecker(std::string line);
         void    execDB();
-        void    printOutput(const std::pair<std::string, std::string>& element, std::string rate);     
+        void    printOutput(const std::pair<std::string, std::string>& element);     
 };
 
 bool isValidDate(const std::string& date);

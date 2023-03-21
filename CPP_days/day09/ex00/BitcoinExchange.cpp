@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 03:47:40 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/21 01:23:49 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/21 02:48:09 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,17 +104,15 @@ void    Btc::execDB()
     
 }
 
-void    Btc::printOutput(const std::pair<std::string, std::string>& element, std::string rate)
+void    Btc::printOutput(const std::pair<std::string, std::string>& element)
 {
-    float value, tmp, result;
-    std::stringstream val(element.second);
-    val >> value;
-    std::stringstream rat(rate);
-    rat >> tmp;
+    float rate, result;
+    std::stringstream rat(element.second);
+    rat >> rate;
 
-    result = value * tmp;
+    result = rate * this->_value;
 
-    std::cout << element.first << " => " << element.second << " = " << result << std::endl;
+    std::cout << element.first << " => " << this->_value << " = " << result << std::endl;
 }
 
 
