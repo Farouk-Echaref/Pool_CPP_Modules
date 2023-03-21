@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 03:47:40 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/18 23:45:51 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/21 01:23:49 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,17 +72,36 @@ void    Btc::parseDB(std::string line)
 
 void    Btc::getInput(std::string filename)
 {
+    int flag = 1;
     std::string line;
     std::ifstream Src(filename);
     
     if (Src.is_open())
     {
         while (std::getline(Src, line))
-            Btc::parseDB(line);
+        {   
+            try
+            {
+                Btc::syntaxChecker(line);
+            }
+            catch(const std::exception& e)
+            {
+                flag = 0;
+                std::cerr << e.what() << '\n';
+            }
+            if (flag == 1)
+                Btc::execDB();
+            std::cout << "success" << std::endl;
+        }
     }
     Src.close();
     
     return ;
+}
+
+void    Btc::execDB()
+{
+    
 }
 
 void    Btc::printOutput(const std::pair<std::string, std::string>& element, std::string rate)

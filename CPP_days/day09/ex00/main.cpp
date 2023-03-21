@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 03:48:07 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/18 23:45:16 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/20 22:51:21 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int main(int argc, char **argv)
         std::string src(argv[1]);
         
         btc.readDB(path);
-        btc.execMap();
         btc.getInput(src);
     }
     else    
