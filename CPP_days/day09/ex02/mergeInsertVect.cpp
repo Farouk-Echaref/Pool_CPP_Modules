@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mergeInsert.cpp                                    :+:      :+:    :+:   */
+/*   mergeInsertVect.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 06:35:42 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/23 08:24:12 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/24 00:28:25 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-void    ft_swap(int *a, int *b)
-{
-    *a = *a ^ *b;
-    *b = *a ^ *b;
-    *a = *a ^ *b;
-}
-
 void    insertSort(std::vector<int> &vec, int left, int right)
 {
     int i,j;
-    for (i = left; i < right; i++)
+    for (i = left; i < right - 1; i++)
     {
         j = i + 1;
         while (j > 0)
