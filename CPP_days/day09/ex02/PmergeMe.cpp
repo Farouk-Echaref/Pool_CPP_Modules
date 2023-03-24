@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 00:23:25 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/24 07:05:10 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/24 07:14:09 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void    PmergeMe::sortVect(void)
     merge_insertion_sort(this->_vec);
 }
 
-// void    PmergeMe::sortDeq(void)
-// {
-//     merge_insert(this->_deq, 0, this->_deq.size());
-// }
+void    PmergeMe::sortVect(void)
+{
+    merge_insertion_sort(this->_vec);
+}
