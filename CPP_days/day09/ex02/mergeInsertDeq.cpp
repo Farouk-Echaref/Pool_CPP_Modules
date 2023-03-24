@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 06:35:42 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/24 07:27:14 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/24 21:14:47 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void merge_insert_sort(std::deque<int>& data, int left, int right, int insert_so
 // Sort function for std::deque<int>
 void merge_insertion_sort_deq(std::deque<int>& data) {
     const int n = data.size();
-    const int insert_sort_threshold = std::max(1, static_cast<int>(std::sqrt(n)));
+    const int insert_sort_threshold = std::max(20, static_cast<int>(std::sqrt(n)));
 
     merge_insert_sort(data, 0, n - 1, insert_sort_threshold);
 }

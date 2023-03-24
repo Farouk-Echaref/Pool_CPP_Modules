@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 19:40:16 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/24 07:25:34 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/24 21:35:19 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #include <sstream>
 #include <string>
 #include <ctime>
+#include <iomanip>
 
 class PmergeMe
 {
