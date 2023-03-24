@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 00:23:25 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/24 21:46:42 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/24 22:20:39 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,8 @@ void    PmergeMe::printContainer(void)
 
 void    PmergeMe::printTime(void)
 {
-    std::cout << "Time to process a range of " << this->_vec.size() << "elements with std::vector<int> : " << std::fixed << std::setprecision(20) << this->_vecProcessTime << std::endl;
-    std::cout << "Time to process a range of " << this->_deq.size() << "elements with std::deque<int> : " << std::fixed << std::setprecision(20) << this->_deqProcessTime << std::endl;
+    std::cout << "Time to process a range of " << this->_vec.size() << " elements with std::vector<int> : " << std::fixed << std::setprecision(20) << this->_vecProcessTime << " ms."<< std::endl;
+    std::cout << "Time to process a range of " << this->_deq.size() << " elements with std::deque<int>  : " << std::fixed << std::setprecision(20) << this->_deqProcessTime << " ms."<< std::endl;
 }
 
 void    PmergeMe::sortVect(void)
