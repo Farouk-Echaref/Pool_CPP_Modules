@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 00:24:47 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/24 06:47:45 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/24 07:26:18 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main(int argc, char **argv)
     std::clock_t endVectSort = std::clock();
     
     std::clock_t startDeqSort = std::clock();
-    // Pm.sortDeq();
+    Pm.sortDeq();
     std::clock_t endDeqSort = std::clock();
     
     double vecProcessTime = (startVectData - endVectData + startVectSort - endVectSort) / CLOCKS_PER_SEC;
@@ -48,6 +48,6 @@ int main(int argc, char **argv)
 
     std::cout << "After: " << std::endl;
     Pm.printContainer();
-    // Pm.printTime();
+    Pm.printTime();
     return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 00:23:25 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/24 07:14:09 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/24 07:26:27 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,12 @@ void    PmergeMe::printContainer(void)
         std::cout << *itVec << " ";
     std::cout << "" << std::endl;
     std::cout << "" << std::endl;
-    // std::cout << "Using std::deque: " << std::endl;
-    // std::deque<int>::iterator itDeq = this->_deq.begin();
-    // for(; itDeq != this->_deq.end(); itDeq++)
-    //     std::cout << *itDeq << " ";
-    // std::cout << "" << std::endl;
-    // std::cout << "" << std::endl;
+    std::cout << "Using std::deque: " << std::endl;
+    std::deque<int>::iterator itDeq = this->_deq.begin();
+    for(; itDeq != this->_deq.end(); itDeq++)
+        std::cout << *itDeq << " ";
+    std::cout << "" << std::endl;
+    std::cout << "" << std::endl;
 }
 
 void    PmergeMe::printTime(void)
@@ -109,10 +109,10 @@ void    PmergeMe::printTime(void)
 
 void    PmergeMe::sortVect(void)
 {
-    merge_insertion_sort(this->_vec);
+    merge_insertion_sort_vec(this->_vec);
 }
 
-void    PmergeMe::sortVect(void)
+void    PmergeMe::sortDeq(void)
 {
-    merge_insertion_sort(this->_vec);
+    merge_insertion_sort_deq(this->_deq);
 }

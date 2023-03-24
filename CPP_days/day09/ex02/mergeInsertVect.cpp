@@ -6,11 +6,26 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 06:35:42 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/24 07:13:00 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/24 07:26:55 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+
+// Insertion sort for small subarrays
+void insertion_sort(std::vector<int>& data, int left, int right) {
+    for (int i = left + 1; i <= right; ++i) {
+        int key = data[i];
+        int j = i - 1;
+
+        while (j >= left && data[j] > key) {
+            data[j + 1] = data[j];
+            --j;
+        }
+        data[j + 1] = key;
+    }
+}
+
 
 // Merge two sorted subarrays
 void merge(std::vector<int>& data, int left, int mid, int right) {
@@ -35,21 +50,6 @@ void merge(std::vector<int>& data, int left, int mid, int right) {
     }
 }
 
-// Insertion sort for small subarrays
-void insertion_sort(std::vector<int>& data, int left, int right) {
-    for (int i = left + 1; i <= right; ++i) {
-        int key = data[i];
-        int j = i - 1;
-
-        while (j >= left && data[j] > key) {
-            data[j + 1] = data[j];
-            --j;
-        }
-
-        data[j + 1] = key;
-    }
-}
-
 // Merge-insert sort
 void merge_insert_sort(std::vector<int>& data, int left, int right, int insert_sort_threshold) {
     if (right - left + 1 <= insert_sort_threshold) {
@@ -61,9 +61,8 @@ void merge_insert_sort(std::vector<int>& data, int left, int right, int insert_s
         merge(data, left, mid, right);
     }
 }
-
 // Sort function for std::vector<int>
-void merge_insertion_sort(std::vector<int>& data) {
+void merge_insertion_sort_vec(std::vector<int>& data) {
     const int n = data.size();
     const int insert_sort_threshold = std::max(1, static_cast<int>(std::sqrt(n)));
 
