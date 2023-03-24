@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 03:47:40 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/21 03:30:12 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/24 22:28:40 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,12 @@ void    Btc::getInput(std::string filename)
     
     if (Src.is_open())
     {
+        while (std::getline(Src, line)) {
+            if (!line.empty())
+        break;
+        }
+
+        std::getline(Src, line);
         while (std::getline(Src, line))
         {   
             flag = 1;
