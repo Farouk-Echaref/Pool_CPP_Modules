@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 23:36:34 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/21 03:17:15 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/24 07:50:29 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 bool    checkYear(int year)
 {
-  // if year is divisible by 4 AND not divisible by 100
+  // if year is divisible by 4 & not divisible by 100
   // OR if year is divisible by 400
   // then it is a leap year
   if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
-    //return 1 if leap
     return (true);
   return (false);
 }
@@ -52,6 +51,8 @@ void    Btc::syntaxChecker(std::string line)
     // Extract the date string, separator character, and value from the line
     ss >> date_str >> separator >> value;
     // Check that the date string is in the correct format (YYYY-MM-DD)
+    if (date_str == "date" && separator == '|' && value == 0)
+        return ;
     if (!isValidDate(date_str) || separator != '|' || ss.fail() || !ss.eof())
     {
         throw std::runtime_error(std::string("Error: Bad input: ") + line + '.');
