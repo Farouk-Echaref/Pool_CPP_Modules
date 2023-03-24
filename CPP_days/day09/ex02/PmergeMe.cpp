@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 00:23:25 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/24 02:45:33 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/24 06:24:15 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,28 +35,84 @@ PmergeMe & PmergeMe::operator=(PmergeMe const & obj)
     return (*this);
 }
 
-void    PmergeMe::setPm(int num)
+int stringToInt(const std::string& str) {
+    std::stringstream ss(str);
+    int num;
+    ss >> num;
+    return num;
+}
+
+bool isPositiveInteger(const std::string& str) {
+    if (str.empty())
+        return false;
+
+    for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
+        if (!isdigit(*it)) 
+            return false;
+    }
+    return true;
+}
+
+int PmergeMe::setPmVect(char **argv, int argc)
 {
-    this->_deq.push_back(num);
-    this->_vec.push_back(num);
+    for (int i = 1; i < argc; i++)
+    {
+        std::string n = argv[i];
+        if (isPositiveInteger(n) == false)
+            return (-1);
+        this->_vec.push_back(stringToInt(n));
+    }
+    return (1);
+}
+
+int PmergeMe::setPmDeq(char **argv, int argc)
+{
+    for (int i = 1; i < argc; i++)
+    {
+        std::string n = argv[i];
+        if (isPositiveInteger(n) == false)
+            return (-1);
+        this->_deq.push_back(stringToInt(n));
+    }
+    return (1);
+}
+
+void    PmergeMe::setTimer(double time, int choice)
+{
+    if (choice == 1)
+        this->_vecProcessTime = time;
+    else
+        this->_deqProcessTime = time;
 }
 
 void    PmergeMe::printContainer(void)
 {
-    std::cout << "std::vector: " << std::endl;
+    std::cout << "Using std::vector: " << std::endl;
     std::vector<int>::iterator itVec = this->_vec.begin();
     for(; itVec != this->_vec.end(); itVec++)
         std::cout << *itVec << " ";
     std::cout << "" << std::endl;
-    std::cout << "std::deque: " << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << "Using std::deque: " << std::endl;
     std::deque<int>::iterator itDeq = this->_deq.begin();
     for(; itDeq != this->_deq.end(); itDeq++)
         std::cout << *itDeq << " ";
     std::cout << "" << std::endl;
+    std::cout << "" << std::endl;
 }
 
-void    PmergeMe::sortContainer(void)
+void    PmergeMe::printTime(void)
+{
+    std::cout << "Time to process a range of " << this->_vec.size() << "elements with std::vector<int> : " << this->_vecProcessTime << std::endl;
+    std::cout << "Time to process a range of " << this->_deq.size() << "elements with std::deque<int> : " << this->_deqProcessTime << std::endl;
+}
+
+void    PmergeMe::sortVect(void)
+{
+    merge_insert(this->_vec, 0, this->_vec.size());
+}
+
+void    PmergeMe::sortDeq(void)
 {
     merge_insert(this->_deq, 0, this->_deq.size());
-    merge_insert(this->_vec, 0, this->_vec.size());
 }

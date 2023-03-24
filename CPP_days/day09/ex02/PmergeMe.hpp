@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 19:40:16 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/24 02:44:43 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/24 06:15:54 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,28 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <ctime>
 
 class PmergeMe
 {
     private:
-        std::vector<int> _vec;
-        std::deque<int>  _deq;
+        std::vector<int>    _vec;
+        std::deque<int>     _deq;
+        double              _vecProcessTime;
+        double              _deqProcessTime;
     public:
         PmergeMe();
         PmergeMe(PmergeMe const & src);
         ~PmergeMe();
         PmergeMe & operator=(PmergeMe const & obj);
 
-        void    setPm(int numb);
+        int     setPmVect(char **argv, int argc);
+        int     setPmDeq(char **argv, int argc);
         void    printContainer(void);
-        void    sortContainer(void);
+        void    sortVect(void);
+        void    sortDeq(void);
+        void    setTimer(double time, int choice);
+        void    printTime(void);
 };
 
 void    ft_swap(int *a, int *b);

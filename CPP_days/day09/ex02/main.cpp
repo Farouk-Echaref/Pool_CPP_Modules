@@ -6,51 +6,48 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 00:24:47 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/03/24 02:47:39 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/03/24 06:25:14 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-int stringToInt(const std::string& str) {
-    std::stringstream ss(str);
-    int num;
-    ss >> num;
-    return num;
-}
-
-bool isPositiveInteger(const std::string& str) {
-    if (str.empty()) { // empty string is not a valid integer
-        return false;
-    }
-
-    for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
-        if (!isdigit(*it)) { // if a non-digit character is encountered, the string is not a valid integer
-            return false;
-        }
-    }
-
-    return true;
-}
 
 int main(int argc, char **argv)
 {
     PmergeMe Pm;
     
-    for (int i = 1; i < argc; i++)
+    std::clock_t startVectData = std::clock();
+    if (Pm.setPmVect(argv, argc) < 0)
     {
-        std::string n = argv[i];
-        if (isPositiveInteger(n) == false)
-        {
-            std::cout << "Error." << std::endl;
-            return (-1);
-        }
-        Pm.setPm(stringToInt(n));
-    }
+        std::cout << "Error." << std::endl;
+        return (0);
+    }   
+    std::clock_t endVectData = std::clock();
+    
+    std::clock_t startDeqData = std::clock();
+    Pm.setPmDeq(argv, argc);
+    std::clock_t endDeqData = std::clock();
+    
     std::cout << "Before: " << std::endl;
     Pm.printContainer();
-    Pm.sortContainer();
+    
+    std::clock_t startVectSort = std::clock();
+    Pm.sortVect();
+    std::clock_t endVectSort = std::clock();
+    
+    std::clock_t startDeqSort = std::clock();
+    Pm.sortDeq();
+    std::clock_t endDeqSort = std::clock();
+    
+    double vecProcessTime = (startVectData - endVectData + startVectSort - endVectSort) / CLOCKS_PER_SEC;
+    Pm.setTimer(vecProcessTime, 1);
+    
+    double deqProcessTime = (startDeqData - endDeqData + startDeqSort - endDeqSort) / CLOCKS_PER_SEC;
+    Pm.setTimer(deqProcessTime, 0);
+
     std::cout << "After: " << std::endl;
     Pm.printContainer();
+    Pm.printTime();
     return (0);
 }
