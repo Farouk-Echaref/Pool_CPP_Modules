@@ -6,7 +6,7 @@
 /*   By: fech-cha <fech-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 13:48:16 by fech-cha          #+#    #+#             */
-/*   Updated: 2023/01/26 03:24:00 by fech-cha         ###   ########.fr       */
+/*   Updated: 2023/04/11 00:58:15 by fech-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 int main()
 {
     //stored in alphabetical order
-    std::unordered_map<std::string, int> container;
+    std::map<std::string, int> container;
 
     container["one"] = 1;
     container["two"] = 2;
@@ -40,10 +40,13 @@ int main()
     // for (auto &i : container)
     //     std::cout << i.first << " = " << i.second << std::endl;
 
-    for (std::unordered_map<std::string, int>::iterator i = container.begin(); i != container.end(); ++i)
-        std::cout << i->first << " = " << i->second << std::endl;
+    // for (std::unordered_map<std::string, int>::iterator i = container.begin(); i != container.end(); ++i)
+    //     std::cout << i->first << " = " << i->second << std::endl;
 
-    std::cout << container["two"] << std::endl;
+    // std::cout << container["two"] << std::endl;
+    
+     std::map<std::string,int>::iterator itlow = container.lower_bound("twz");
+     std::cout << itlow->second << std::endl;
 
     return (0);
 }
